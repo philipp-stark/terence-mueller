@@ -45,7 +45,8 @@
       transform-style: preserve-3d;
       transition: transform 0.6s cubic-bezier(.4,0,.2,1);
     }
-    .flip-card:hover .flip-card__inner {
+    .flip-card:hover .flip-card__inner,
+    .flip-card.flipped .flip-card__inner {
       transform: rotateY(180deg);
     }
     .flip-card__front,
@@ -148,20 +149,24 @@
         <span></span><span></span><span></span>
       </button>
     </div>
-    <!-- Mobile menu -->
-    <div class="nav__mobile" id="mobileMenu">
+  </nav>
+  <div class="nav__mobile" id="mobileMenu">
       <ul>
         <li><a href="index.html" class="mobile-link">Home</a></li>
         <li><a href="finanzberatung.html" class="mobile-link">Finanzberatung</a></li>
-        <li><a href="eigentum.html" class="mobile-link mobile-link--sub">Eigentum</a></li>
-        <li><a href="kapitalanlage.html" class="mobile-link mobile-link--sub">Kapitalanlageimmobilie</a></li>
-        <li><a href="anschlussfinanzierung.html" class="mobile-link mobile-link--sub">Anschlussfinanzierung</a></li>
+        <li class="nav__mobile-group">
+          <a href="#" class="mobile-link mobile-link--parent">Finanzierung</a>
+          <ul class="nav__mobile-sub">
+            <li><a href="eigentum.html" class="mobile-link mobile-link--sub">Eigentum</a></li>
+            <li><a href="kapitalanlage.html" class="mobile-link mobile-link--sub">Kapitalanlageimmobilie</a></li>
+            <li><a href="anschlussfinanzierung.html" class="mobile-link mobile-link--sub">Anschlussfinanzierung</a></li>
+          </ul>
+        </li>
         <li><a href="gewerbeversicherung.html" class="mobile-link">Gewerbeversicherung</a></li>
         <li><a href="service.html" class="mobile-link">Service</a></li>
         <li><a href="#kontakt" class="btn btn--primary mobile-link">Gespräch vereinbaren</a></li>
       </ul>
-    </div>
-  </nav>
+  </div>
 
   <!-- ───────────── HERO ───────────── -->
   <section class="hero" id="home">
@@ -218,7 +223,7 @@
 
         <div class="service-card">
           <div class="service-card__icon">
-            <svg viewBox="0 0 48 48" fill="none"><rect x="6" y="14" width="36" height="26" rx="3" stroke="currentColor" stroke-width="2"/><path d="M16 14v-4a8 8 0 0116 0v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="24" cy="27" r="4" stroke="currentColor" stroke-width="2"/></svg>
+            <svg viewBox="0 0 48 48" fill="none"><path d="M8 22L24 8l16 14v18H8V22z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><rect x="19" y="30" width="10" height="12" rx="1" stroke="currentColor" stroke-width="2"/></svg>
           </div>
           <h3 class="service-card__title">Finanzierung</h3>
           <p class="service-card__text">Ob Immobilie, Auto oder Privatkredit, ich begleite dich durch den gesamten Prozess und finde die Lösung, die wirklich zu dir passt.</p>
@@ -227,7 +232,7 @@
 
         <div class="service-card">
           <div class="service-card__icon">
-            <svg viewBox="0 0 48 48" fill="none"><path d="M24 6L6 16v8c0 10 8 18 18 20 10-2 18-10 18-20v-8L24 6z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M16 24l5 5 11-10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg viewBox="0 0 48 48" fill="none"><path d="M24 8C12 8 6 18 6 26h36c0-8-6-18-18-18z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M24 26v12a4 4 0 008 0" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="24" y1="8" x2="24" y2="6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
           </div>
           <h3 class="service-card__title">Vorsorge</h3>
           <p class="service-card__text">Ich helfe dir, frühzeitig die richtigen Weichen zu stellen, damit du im Alter so leben kannst, wie du es dir vorstellst.</p>
@@ -236,7 +241,7 @@
 
         <div class="service-card">
           <div class="service-card__icon">
-            <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="18" stroke="currentColor" stroke-width="2"/><path d="M24 14v10l6 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            <svg viewBox="0 0 48 48" fill="none"><path d="M24 6L6 16v8c0 10 8 18 18 20 10-2 18-10 18-20v-8L24 6z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M16 24l5 5 11-10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </div>
           <h3 class="service-card__title">Absicherung</h3>
           <p class="service-card__text">Ich schaue mir deine Situation genau an und sorge dafür, dass du bei den Dingen abgesichert bist, die wirklich zählen.</p>
@@ -254,7 +259,7 @@
 
         <div class="service-card service-card--wide">
           <div class="service-card__icon">
-            <svg viewBox="0 0 48 48" fill="none"><rect x="6" y="20" width="14" height="22" rx="2" stroke="currentColor" stroke-width="2"/><rect x="22" y="12" width="14" height="30" rx="2" stroke="currentColor" stroke-width="2"/><rect x="38" y="6" width="4" height="36" rx="2" stroke="currentColor" stroke-width="2"/></svg>
+            <svg viewBox="0 0 48 48" fill="none"><rect x="8" y="14" width="20" height="28" rx="1" stroke="currentColor" stroke-width="2"/><path d="M28 22h12v20H28" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><rect x="12" y="18" width="5" height="5" rx="1" stroke="currentColor" stroke-width="2"/><rect x="21" y="18" width="5" height="5" rx="1" stroke="currentColor" stroke-width="2"/><rect x="12" y="27" width="5" height="5" rx="1" stroke="currentColor" stroke-width="2"/><rect x="21" y="27" width="5" height="5" rx="1" stroke="currentColor" stroke-width="2"/><rect x="16" y="34" width="6" height="8" rx="1" stroke="currentColor" stroke-width="2"/></svg>
           </div>
           <h3 class="service-card__title">Gewerbeversicherung</h3>
           <p class="service-card__text">Als Selbstständiger oder Unternehmer trägst du besondere Verantwortung. Ich sorge dafür, dass dein Business richtig abgesichert ist.</p>
@@ -340,7 +345,7 @@
         <p class="service-cta__text">
           Hier findest du Vergleichsrechner für Privatkredite, Girokonten und Strom&amp;Gas, sowie mein Empfehlungsprogramm, eine App für deine Finanzen und Flyer.
         </p>
-        <a href="#" class="btn btn--gold">Mein Service</a>
+        <a href="service.html" class="btn btn--gold">Mein Service</a>
       </div>
     </div>
   </section>

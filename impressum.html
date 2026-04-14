@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="style.css" />
   <style>
     .impressum-page {
-      background: var(--c-bg);
+      background: #ffffff;
       min-height: 100vh;
       padding-top: calc(var(--nav-h) + 60px);
       padding-bottom: 100px;
@@ -35,7 +35,6 @@
       color: var(--c-text-muted);
       margin-bottom: 56px;
       padding-bottom: 32px;
-      border-bottom: 1px solid var(--c-border);
     }
 
     .impressum-block {
@@ -52,6 +51,9 @@
       padding-bottom: 10px;
       border-bottom: 2px solid var(--c-gold);
       display: inline-block;
+      overflow-wrap: break-word;
+      word-break: break-word;
+      max-width: 100%;
     }
 
     .impressum-block p {
@@ -121,13 +123,20 @@
     }
 
     .impressum-divider {
-      height: 1px;
-      background: var(--c-border);
-      margin: 48px 0;
+      display: none;
     }
+
+    /* Nav always solid on this page */
+    .nav--solid { background: var(--c-dark) !important; backdrop-filter: none !important; -webkit-backdrop-filter: none !important; }
+    .nav--solid .nav__links a,
+    .nav--solid .nav__cta { color: #fff; }
+
+    .mobile-br { display: none; }
 
     /* ── Mobile (≤ 767px) ── */
     @media (max-width: 767px) {
+      .mobile-br { display: block; }
+      .impressum-wrap .lead { margin-bottom: 24px; padding-bottom: 0; }
       .impressum-page { padding-top: calc(var(--nav-h) + 32px); padding-bottom: 64px; }
       .impressum-wrap { padding: 0 20px; }
       .impressum-wrap h1 { font-size: 1.75rem; }
@@ -139,7 +148,7 @@
 <body>
 
   <!-- NAVIGATION -->
-  <nav class="nav scrolled" id="navbar">
+  <nav class="nav scrolled nav--solid" id="navbar">
     <div class="nav__inner">
       <a href="index.html" class="nav__logo">
         <img src="Bilder/Logo.png" alt="Terence Müller Logo" class="nav__logo-img" />
@@ -159,8 +168,28 @@
         <li><a href="service.html">Service</a></li>
       </ul>
       <a href="index.html#kontakt" class="btn btn--primary nav__cta">Gespräch vereinbaren</a>
+      <button class="nav__burger" id="burger" aria-label="Menü öffnen">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </nav>
+  <div class="nav__mobile" id="mobileMenu">
+    <ul>
+      <li><a href="index.html" class="mobile-link">Home</a></li>
+      <li><a href="finanzberatung.html" class="mobile-link">Finanzberatung</a></li>
+      <li class="nav__mobile-group">
+        <a href="#" class="mobile-link mobile-link--parent">Finanzierung</a>
+        <ul class="nav__mobile-sub">
+          <li><a href="eigentum.html" class="mobile-link mobile-link--sub">Eigentum</a></li>
+          <li><a href="kapitalanlage.html" class="mobile-link mobile-link--sub">Kapitalanlageimmobilie</a></li>
+          <li><a href="anschlussfinanzierung.html" class="mobile-link mobile-link--sub">Anschlussfinanzierung</a></li>
+        </ul>
+      </li>
+      <li><a href="gewerbeversicherung.html" class="mobile-link">Gewerbeversicherung</a></li>
+      <li><a href="service.html" class="mobile-link">Service</a></li>
+      <li><a href="index.html#kontakt" class="btn btn--primary mobile-link">Gespräch vereinbaren</a></li>
+    </ul>
+  </div>
 
   <div class="impressum-page">
     <div class="impressum-wrap">
@@ -252,7 +281,7 @@
 
       <!-- Haftpflicht -->
       <div class="impressum-block">
-        <h2>Vermögensschadenhaftpflichtversicherung</h2>
+        <h2>Vermögensschaden-<br class="mobile-br">haftpflichtversicherung</h2>
         <p>Für die gewerbsmäßige Vermittlung von Versicherungsverträgen als Versicherungsvermittler besteht eine Berufshaftpflichtversicherung gemäß § 34d Abs. 2 Nr. 3 GewO bei der</p>
         <p>
           VICTORIA Versicherung AG<br />
@@ -391,5 +420,6 @@
     </div>
   </footer>
 
+  <script src="script.js"></script>
 </body>
 </html>

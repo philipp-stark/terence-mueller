@@ -39,7 +39,18 @@ burger.addEventListener('click', () => {
 });
 
 mobileLinks.forEach(link => {
-  link.addEventListener('click', closeMenu);
+  if (!link.classList.contains('mobile-link--parent')) {
+    link.addEventListener('click', closeMenu);
+  }
+});
+
+// Accordion toggle for Finanzierung
+document.querySelectorAll('.mobile-link--parent').forEach(link => {
+  link.addEventListener('click', e => {
+    e.preventDefault();
+    const group = link.closest('.nav__mobile-group');
+    group.classList.toggle('open');
+  });
 });
 
 // ── Scroll reveal ──
@@ -68,6 +79,23 @@ const revealObserver = new IntersectionObserver(
 );
 
 revealEls.forEach(el => revealObserver.observe(el));
+
+// ── Flip card: auto-reset on scroll ──
+const flipCard = document.querySelector('.flip-card');
+if (flipCard) {
+  flipCard.addEventListener('click', () => {
+    flipCard.classList.toggle('flipped');
+  });
+
+  window.addEventListener('scroll', () => {
+    if (flipCard.classList.contains('flipped')) {
+      const rect = flipCard.getBoundingClientRect();
+      if (rect.bottom < 0 || rect.top > window.innerHeight) {
+        flipCard.classList.remove('flipped');
+      }
+    }
+  }, { passive: true });
+}
 
 // ── Counter animation (stats) ──
 const counters = document.querySelectorAll('.stats__number');

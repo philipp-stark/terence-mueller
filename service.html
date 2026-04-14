@@ -39,7 +39,7 @@
       color: var(--c-gold);
       margin-bottom: 20px;
       padding: 6px 16px;
-      border: 1px solid rgba(201,164,106,.35);
+      border: 1px solid rgba(255,255,255,.35);
       border-radius: 50px;
     }
     .page-hero h1 {
@@ -102,12 +102,12 @@
       transform-origin: left;
       transition: transform var(--transition);
     }
-    .rechner-card:hover { transform: translateY(-4px); border-color: rgba(201,164,106,.3); }
+    .rechner-card:hover { transform: translateY(-4px); border-color: rgba(255,255,255,.3); }
     .rechner-card:hover::before { transform: scaleX(1); }
     .rechner-card__icon {
       width: 48px; height: 48px;
       border-radius: 12px;
-      background: rgba(201,164,106,.12);
+      background: rgba(255,255,255,.12);
       display: flex; align-items: center; justify-content: center;
     }
     .rechner-card__icon svg { width: 24px; height: 24px; color: var(--c-gold); }
@@ -193,7 +193,7 @@
       padding: 10px 12px; border-radius: 9px;
       border: 1px solid var(--c-border);
     }
-    .spezial-result--top { border-color: rgba(201,164,106,.4); background: rgba(201,164,106,.05); }
+    .spezial-result--top { border-color: rgba(255,255,255,.4); background: rgba(255,255,255,.05); }
     .spezial-result__left { display: flex; align-items: center; gap: 10px; }
     .spezial-result__icon {
       width: 32px; height: 32px; border-radius: 8px;
@@ -207,7 +207,7 @@
       font-size: .62rem; font-weight: 700; padding: 3px 8px;
       border-radius: 99px;
     }
-    .spezial-result--top .spezial-result__badge { background: rgba(201,164,106,.15); color: #b8873a; }
+    .spezial-result--top .spezial-result__badge { background: rgba(255,255,255,.15); color: #ffffff; }
     .spezial-result:not(.spezial-result--top) .spezial-result__badge { background: var(--c-bg); color: var(--c-text-muted); }
     .spezial-mock-count {
       font-size: .68rem; color: var(--c-text-muted); text-align: center; padding-top: 4px;
@@ -279,7 +279,7 @@
       border-radius: 24px;
       padding: 14px;
       box-shadow:
-        0 0 0 1px rgba(201,164,106,.2),
+        0 0 0 1px rgba(255,255,255,.2),
         0 0 0 8px rgba(15,38,38,.5),
         0 32px 64px rgba(0,0,0,.4);
       width: 100%;
@@ -318,9 +318,9 @@
     .tablet-badge {
       font-size: 10px;
       font-weight: 600;
-      background: rgba(201,164,106,.15);
+      background: rgba(255,255,255,.15);
       color: var(--c-gold);
-      border: 1px solid rgba(201,164,106,.3);
+      border: 1px solid rgba(255,255,255,.3);
       border-radius: 20px;
       padding: 3px 10px;
     }
@@ -483,7 +483,7 @@
     }
     .cal-cta__icon {
       width: 52px; height: 52px; border-radius: 14px;
-      background: rgba(201,164,106,.15);
+      background: rgba(255,255,255,.15);
       display: flex; align-items: center; justify-content: center;
     }
     .cal-cta__icon svg { width: 26px; height: 26px; color: var(--c-gold); }
@@ -558,19 +558,24 @@
         <span></span><span></span><span></span>
       </button>
     </div>
-    <div class="nav__mobile" id="mobileMenu">
+  </nav>
+  <div class="nav__mobile" id="mobileMenu">
       <ul>
         <li><a href="index.html" class="mobile-link">Home</a></li>
         <li><a href="finanzberatung.html" class="mobile-link">Finanzberatung</a></li>
-        <li><a href="eigentum.html" class="mobile-link mobile-link--sub">Eigentum</a></li>
-        <li><a href="kapitalanlage.html" class="mobile-link mobile-link--sub">Kapitalanlageimmobilie</a></li>
-        <li><a href="anschlussfinanzierung.html" class="mobile-link mobile-link--sub">Anschlussfinanzierung</a></li>
+        <li class="nav__mobile-group">
+          <a href="#" class="mobile-link mobile-link--parent">Finanzierung</a>
+          <ul class="nav__mobile-sub">
+            <li><a href="eigentum.html" class="mobile-link mobile-link--sub">Eigentum</a></li>
+            <li><a href="kapitalanlage.html" class="mobile-link mobile-link--sub">Kapitalanlageimmobilie</a></li>
+            <li><a href="anschlussfinanzierung.html" class="mobile-link mobile-link--sub">Anschlussfinanzierung</a></li>
+          </ul>
+        </li>
         <li><a href="gewerbeversicherung.html" class="mobile-link">Gewerbeversicherung</a></li>
         <li><a href="service.html" class="mobile-link">Service</a></li>
         <li><a href="index.html#kontakt" class="btn btn--primary mobile-link">Gespräch vereinbaren</a></li>
       </ul>
-    </div>
-  </nav>
+  </div>
 
   <!-- PAGE HERO -->
   <section class="page-hero">
