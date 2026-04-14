@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eigentum – Immobilienfinanzierung | Terence Müller</title>
+  <meta name="description" content="Dein Traum vom Eigenheim. Ob Neubau, Bestand oder eine Wohnung, ich bin für dich da." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* PAGE HERO */
+    .page-hero {
+      position: relative;
+      background: var(--c-dark);
+      padding: calc(var(--nav-h) + 80px) 24px 90px;
+      overflow: hidden;
+      text-align: center;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: url('Bilder/Wallpaper.jpg') center/cover no-repeat;
+      opacity: .18;
+    }
+    .page-hero__inner {
+      position: relative; z-index: 2;
+      max-width: 720px; margin: 0 auto;
+    }
+    .page-hero__eyebrow {
+      display: inline-block;
+      font-size: .8rem; font-weight: 600;
+      letter-spacing: .18em; text-transform: uppercase;
+      color: var(--c-gold); margin-bottom: 20px;
+      padding: 6px 16px;
+      border: 1px solid rgba(201,164,106,.35);
+      border-radius: 50px;
+    }
+    .page-hero h1 {
+      font-size: clamp(2.25rem, 5vw, 3.75rem);
+      font-weight: 700; color: #fff;
+      letter-spacing: -.02em; line-height: 1.15; margin-bottom: 20px;
+    }
+    .page-hero p { font-size: 1.0625rem; color: rgba(255,255,255,.75); line-height: 1.8; }
+
+    /* === UNIFIED SECTION SYSTEM === */
+    .gw-section { padding: 90px 0; }
+    .gw-section--dark  { background: var(--c-dark); }
+    .gw-section--light { background: var(--c-bg); }
+    .gw-section--white { background: var(--c-bg-card); }
+
+    .gw-inner { max-width: 1300px; margin: 0 auto; padding: 0 48px; }
+
+    /* Section header */
+    .gw-header { margin-bottom: 52px; max-width: 800px; }
+    .gw-eyebrow {
+      display: block; font-size: .75rem; font-weight: 600;
+      letter-spacing: .16em; text-transform: uppercase; margin-bottom: 14px;
+    }
+    .gw-section--dark .gw-eyebrow  { color: var(--c-gold); }
+    .gw-section--light .gw-eyebrow,
+    .gw-section--white .gw-eyebrow { color: var(--c-teal-mid); }
+
+    .gw-title {
+      font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+      font-weight: 700; letter-spacing: -.02em; line-height: 1.2; margin-bottom: 14px;
+    }
+    .gw-section--dark .gw-title  { color: #fff; }
+    .gw-section--light .gw-title,
+    .gw-section--white .gw-title { color: var(--c-dark); }
+
+    .gw-subtitle { font-size: .9375rem; line-height: 1.8; max-width: 680px; }
+    .gw-section--dark .gw-subtitle  { color: rgba(255,255,255,.7); }
+    .gw-section--light .gw-subtitle,
+    .gw-section--white .gw-subtitle { color: var(--c-text-muted); }
+
+    /* Grids */
+    .gw-grid { display: grid; gap: 20px; }
+    .gw-grid--4 { grid-template-columns: repeat(4, 1fr); }
+    .gw-grid--3 { grid-template-columns: repeat(3, 1fr); }
+    .gw-grid--2 { grid-template-columns: repeat(2, 1fr); }
+
+    /* Base card */
+    .gw-card {
+      border-radius: var(--radius-md);
+      padding: 32px 28px;
+      position: relative; overflow: hidden;
+      transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
+    }
+    .gw-card::before {
+      content: '';
+      position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
+      transform: scaleX(0); transform-origin: left;
+      transition: transform var(--transition);
+    }
+    .gw-card:hover { transform: translateY(-4px); }
+    .gw-card:hover::before { transform: scaleX(1); }
+    .gw-card__icon {
+      width: 48px; height: 48px; border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 18px;
+    }
+    .gw-card__icon svg { width: 24px; height: 24px; }
+    .gw-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 10px; line-height: 1.3; }
+    .gw-card p  { font-size: .875rem; line-height: 1.75; }
+
+    /* Dark section cards */
+    .gw-section--dark .gw-card {
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.08);
+    }
+    .gw-section--dark .gw-card:hover { border-color: rgba(201,164,106,.3); }
+    .gw-section--dark .gw-card::before { background: linear-gradient(90deg, var(--c-teal-mid), var(--c-gold)); }
+    .gw-section--dark .gw-card__icon  { background: rgba(201,164,106,.12); }
+    .gw-section--dark .gw-card__icon svg { color: var(--c-gold); }
+    .gw-section--dark .gw-card h3 { color: #fff; }
+    .gw-section--dark .gw-card p  { color: rgba(255,255,255,.6); }
+
+    /* Light / white section cards */
+    .gw-section--light .gw-card,
+    .gw-section--white .gw-card {
+      background: var(--c-bg-card);
+      border: 1px solid var(--c-border);
+      box-shadow: 0 2px 8px rgba(15,38,38,.05);
+    }
+    .gw-section--light .gw-card:hover,
+    .gw-section--white .gw-card:hover { box-shadow: var(--shadow-lg); }
+    .gw-section--light .gw-card::before,
+    .gw-section--white .gw-card::before { background: linear-gradient(90deg, var(--c-teal), var(--c-gold)); }
+    .gw-section--light .gw-card__icon,
+    .gw-section--white .gw-card__icon { background: linear-gradient(135deg, rgba(26,74,69,.08), rgba(26,74,69,.16)); }
+    .gw-section--light .gw-card__icon svg,
+    .gw-section--white .gw-card__icon svg { color: var(--c-teal-mid); }
+    .gw-section--light .gw-card h3,
+    .gw-section--white .gw-card h3 { color: var(--c-dark); }
+    .gw-section--light .gw-card p,
+    .gw-section--white .gw-card p  { color: var(--c-text-muted); }
+
+    /* Actions row */
+    .gw-actions { display: flex; gap: 12px; margin-top: 40px; flex-wrap: wrap; }
+
+    /* Split layout */
+    .split-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .split-row--reversed { direction: rtl; }
+    .split-row--reversed > * { direction: ltr; }
+
+    .split-text .split-eyebrow {
+      font-size: .75rem; font-weight: 600;
+      letter-spacing: .16em; text-transform: uppercase;
+      margin-bottom: 14px; display: block;
+    }
+    .gw-section--light .split-eyebrow,
+    .gw-section--white .split-eyebrow { color: var(--c-teal-mid); }
+    .gw-section--dark .split-eyebrow  { color: var(--c-gold); }
+
+    .split-text h2 {
+      font-size: clamp(1.75rem, 3vw, 2.5rem);
+      font-weight: 700; letter-spacing: -.02em;
+      line-height: 1.2; margin-bottom: 20px;
+    }
+    .gw-section--light .split-text h2,
+    .gw-section--white .split-text h2 { color: var(--c-dark); }
+    .gw-section--dark .split-text h2  { color: #fff; }
+
+    .split-text p {
+      font-size: .9375rem; line-height: 1.8; margin-bottom: 14px;
+    }
+    .gw-section--light .split-text p,
+    .gw-section--white .split-text p { color: var(--c-text-muted); }
+    .gw-section--dark .split-text p  { color: rgba(255,255,255,.7); }
+
+    .split-visual {
+      border-radius: var(--radius-lg);
+      min-height: 320px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .gw-section--light .split-visual,
+    .gw-section--white .split-visual {
+      background: linear-gradient(135deg, rgba(26,74,69,.07) 0%, rgba(201,164,106,.1) 100%);
+      border: 1px solid var(--c-border);
+    }
+    .gw-section--dark .split-visual {
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.08);
+    }
+    .split-visual svg {
+      width: 120px; height: 120px; opacity: .35;
+    }
+    .gw-section--light .split-visual svg,
+    .gw-section--white .split-visual svg { color: var(--c-teal); }
+    .gw-section--dark .split-visual svg  { color: var(--c-gold); }
+
+    /* ── Mockup shared ── */
+    .split-visual.mockup {
+      background: none !important;
+      border: none !important;
+      padding: 0;
+      align-items: stretch;
+    }
+    .mock-card {
+      width: 100%;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 24px 64px rgba(15,38,38,.13), 0 4px 16px rgba(15,38,38,.07);
+      font-size: .8125rem;
+    }
+    .mock-header {
+      display: flex; align-items: center; gap: 8px;
+      padding: 13px 18px;
+    }
+    .mock-header__dots { display: flex; gap: 5px; }
+    .mock-header__dots span {
+      width: 9px; height: 9px; border-radius: 50%;
+      background: rgba(255,255,255,.22);
+    }
+    .mock-header__title {
+      font-size: .72rem; font-weight: 600;
+      color: rgba(255,255,255,.85); letter-spacing: .05em;
+      margin-left: 4px;
+    }
+    .mock-body { padding: 20px; background: #fff; }
+
+    /* ── Mockup 1 – Finanzierungsrechner ── */
+    .mock--fin .mock-header { background: var(--c-dark); }
+    .fin-label {
+      font-size: .65rem; font-weight: 600;
+      text-transform: uppercase; letter-spacing: .1em;
+      color: var(--c-text-muted); margin-bottom: 12px;
+    }
+    .fin-row {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 9px 12px; border-radius: 9px;
+      background: var(--c-bg); margin-bottom: 6px;
+    }
+    .fin-row__key { color: var(--c-text-muted); font-size: .75rem; }
+    .fin-row__val { font-weight: 700; color: var(--c-dark); font-size: .8rem; }
+    .fin-row__val--teal { color: var(--c-teal); }
+    .fin-bar-wrap { margin: 14px 0 10px; }
+    .fin-bar-track {
+      height: 8px; background: rgba(15,38,38,.1);
+      border-radius: 99px; overflow: hidden; margin-bottom: 6px;
+    }
+    .fin-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--c-teal) 0%, var(--c-gold) 100%);
+      border-radius: 99px; width: 80%;
+    }
+    .fin-bar-labels {
+      display: flex; justify-content: space-between;
+      font-size: .66rem; color: var(--c-text-muted);
+    }
+    .fin-rate-box {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 13px 16px; border-radius: 11px;
+      background: var(--c-dark); margin-top: 4px;
+    }
+    .fin-rate-box__left {}
+    .fin-rate-lbl { font-size: .65rem; color: rgba(255,255,255,.5); margin-bottom: 2px; }
+    .fin-rate-num {
+      font-size: 1.4rem; font-weight: 800; color: var(--c-gold); line-height: 1;
+    }
+    .fin-rate-num sub { font-size: .65rem; font-weight: 500; color: rgba(255,255,255,.45); }
+    .fin-chips { display: flex; flex-direction: column; gap: 5px; align-items: flex-end; }
+    .fin-chip {
+      font-size: .63rem; padding: 3px 9px; border-radius: 99px;
+      background: rgba(255,255,255,.1); color: rgba(255,255,255,.7); white-space: nowrap;
+    }
+    .fin-source {
+      font-size: .62rem; color: var(--c-text-muted);
+      margin-top: 10px; text-align: right; opacity: .7;
+    }
+
+    /* ── Mockup 2 – KfW Programme ── */
+    .mock--kfw .mock-header { background: #1a4a45; }
+    .kfw-prog {
+      border-radius: 10px; padding: 12px 14px; margin-bottom: 8px;
+      border: 1px solid var(--c-border);
+    }
+    .kfw-prog__top {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-bottom: 6px;
+    }
+    .kfw-prog__badge {
+      font-size: .62rem; font-weight: 700;
+      padding: 3px 8px; border-radius: 99px;
+      background: var(--c-dark); color: var(--c-gold);
+      letter-spacing: .04em;
+    }
+    .kfw-prog__name { font-weight: 700; color: var(--c-dark); font-size: .8rem; }
+    .kfw-prog__rows { display: flex; flex-direction: column; gap: 3px; }
+    .kfw-prog__row {
+      display: flex; justify-content: space-between;
+      font-size: .72rem; color: var(--c-text-muted);
+    }
+    .kfw-prog__row strong { color: var(--c-dark); font-weight: 600; }
+    .kfw-prog__row .gold { color: #b8873a; font-weight: 700; }
+    .kfw-prog__row .teal { color: var(--c-teal); font-weight: 700; }
+    .kfw-ef-wrap { margin-top: 12px; }
+    .kfw-ef-title {
+      font-size: .65rem; font-weight: 600; text-transform: uppercase;
+      letter-spacing: .1em; color: var(--c-text-muted); margin-bottom: 8px;
+    }
+    .kfw-ef-bars { display: flex; flex-direction: column; gap: 4px; }
+    .kfw-ef-row { display: flex; align-items: center; gap: 8px; }
+    .kfw-ef-label { font-size: .68rem; font-weight: 700; width: 42px; color: var(--c-dark); flex-shrink: 0; }
+    .kfw-ef-bar-track { flex: 1; height: 18px; background: rgba(15,38,38,.06); border-radius: 5px; overflow: hidden; position: relative; }
+    .kfw-ef-bar-fill { height: 100%; border-radius: 5px; display: flex; align-items: center; padding-left: 8px; }
+    .kfw-ef-bar-fill span { font-size: .6rem; color: #fff; font-weight: 600; white-space: nowrap; }
+    .kfw-ef-row--active .kfw-ef-label { color: var(--c-teal); }
+    .kfw-ef-row--active .kfw-ef-bar-track { border: 1px solid rgba(26,74,69,.3); }
+    .kfw-source {
+      font-size: .62rem; color: var(--c-text-muted);
+      margin-top: 10px; text-align: right; opacity: .7;
+    }
+
+    /* Numbered steps */
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 20px;
+    }
+    .step-card {
+      border-radius: var(--radius-md);
+      padding: 28px 24px;
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.08);
+      position: relative;
+      transition: transform var(--transition), border-color var(--transition);
+    }
+    .step-card:hover { transform: translateY(-4px); border-color: rgba(201,164,106,.3); }
+    .step-num {
+      font-size: 2rem; font-weight: 700;
+      color: var(--c-gold); opacity: .6;
+      line-height: 1; margin-bottom: 14px;
+      font-family: var(--font-serif);
+    }
+    .step-card h3 { font-size: .95rem; font-weight: 600; color: #fff; margin-bottom: 8px; line-height: 1.35; }
+    .step-card p  { font-size: .8125rem; color: rgba(255,255,255,.55); line-height: 1.7; }
+
+    /* Bauphase section */
+    .gw-section--gradient {
+      position: relative;
+    }
+    .gw-section--gradient::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, var(--c-dark) 0%, var(--c-teal) 60%, var(--c-teal-mid) 100%);
+      z-index: 0;
+    }
+    .gw-section--gradient .bauphase-inner {
+      position: relative; z-index: 1;
+    }
+    .gw-section--gradient .gw-eyebrow { color: var(--c-gold); }
+    .gw-section--gradient .gw-title   { color: #fff; }
+    .gw-section--gradient .bauphase-inner p { color: rgba(255,255,255,.75); }
+    .gw-section--gradient .bauphase-inner .lead-text { color: rgba(255,255,255,.9); }
+    .bauphase-inner {
+      max-width: 760px;
+      text-align: center;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .bauphase-inner p {
+      font-size: 1.0625rem;
+      color: rgba(255,255,255,.75);
+      line-height: 1.85;
+      margin-bottom: 14px;
+    }
+    .bauphase-inner .lead-text {
+      font-size: 1.125rem;
+      color: rgba(255,255,255,.85);
+      margin-bottom: 36px;
+    }
+
+    /* Fragen Grid */
+    .fragen-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 40px 24px;
+    }
+    .frage-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 16px;
+    }
+    .frage-icon {
+      width: 72px; height: 72px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .frage-icon svg {
+      width: 56px; height: 56px;
+      color: var(--c-teal);
+    }
+    .frage-item p {
+      font-size: .875rem;
+      color: var(--c-dark);
+      line-height: 1.5;
+      font-weight: 500;
+    }
+
+    /* Responsive */
+    @media (max-width: 1023px) {
+      .fragen-grid { grid-template-columns: repeat(4, 1fr); }
+      .steps-grid { grid-template-columns: repeat(3, 1fr); }
+      .gw-grid--4 { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    /* ── Mobile (≤ 767px) ── */
+    @media (max-width: 767px) {
+      .page-hero { padding: calc(var(--nav-h) + 40px) 20px 56px; }
+      .gw-section { padding: 60px 0; }
+      .gw-inner { padding: 0 20px; }
+      .gw-header { margin-bottom: 32px; }
+      .split-row { grid-template-columns: 1fr; gap: 36px; padding: 0 20px; }
+      .split-row--reversed { direction: ltr; }
+      .split-visual { min-height: 160px; padding: 24px; }
+      .steps-grid { grid-template-columns: 1fr 1fr; }
+      .gw-grid--3 { grid-template-columns: 1fr 1fr; }
+      .fragen-grid { grid-template-columns: repeat(2, 1fr); gap: 28px 16px; }
+      .bauphase-inner { padding: 0 16px; }
+      .gw-actions { flex-direction: column; align-items: stretch; }
+      .gw-actions .btn { justify-content: center; }
+    }
+
+    @media (max-width: 480px) {
+      .steps-grid { grid-template-columns: 1fr; }
+      .fragen-grid { grid-template-columns: repeat(2, 1fr); }
+      .gw-grid--4,
+      .gw-grid--3,
+      .gw-grid--2 { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="nav" id="navbar">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">
+        <img src="Bilder/Logo.png" alt="Terence Müller Logo" class="nav__logo-img" />
+      </a>
+      <ul class="nav__links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="finanzberatung.html">Finanzberatung</a></li>
+        <li class="nav__has-dropdown">
+          <a href="eigentum.html">Finanzierung <span class="nav__chevron">▾</span></a>
+          <ul class="nav__dropdown">
+            <li><a href="eigentum.html">Eigentum</a></li>
+            <li><a href="kapitalanlage.html">Kapitalanlageimmobilie</a></li>
+            <li><a href="anschlussfinanzierung.html">Anschlussfinanzierung</a></li>
+          </ul>
+        </li>
+        <li><a href="gewerbeversicherung.html">Gewerbeversicherung</a></li>
+        <li><a href="service.html">Service</a></li>
+      </ul>
+      <a href="index.html#kontakt" class="btn btn--primary nav__cta">Gespräch vereinbaren</a>
+      <button class="nav__burger" id="burger" aria-label="Menü öffnen">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav__mobile" id="mobileMenu">
+      <ul>
+        <li><a href="index.html" class="mobile-link">Home</a></li>
+        <li><a href="finanzberatung.html" class="mobile-link">Finanzberatung</a></li>
+        <li><a href="eigentum.html" class="mobile-link mobile-link--sub">Eigentum</a></li>
+        <li><a href="kapitalanlage.html" class="mobile-link mobile-link--sub">Kapitalanlageimmobilie</a></li>
+        <li><a href="anschlussfinanzierung.html" class="mobile-link mobile-link--sub">Anschlussfinanzierung</a></li>
+        <li><a href="gewerbeversicherung.html" class="mobile-link">Gewerbeversicherung</a></li>
+        <li><a href="service.html" class="mobile-link">Service</a></li>
+        <li><a href="index.html#kontakt" class="btn btn--primary mobile-link">Gespräch vereinbaren</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="page-hero__inner">
+      <span class="page-hero__eyebrow">Immobilienfinanzierung</span>
+      <h1>Dein Traum vom Eigenheim</h1>
+      <p>Ob Neubau, Bestand oder eine Wohnung, ich bin für dich da</p>
+    </div>
+  </section>
+
+  <!-- DIE EIGENEN 4 WÄNDE -->
+  <section class="gw-section gw-section--light">
+    <div class="gw-inner">
+      <div class="split-row">
+        <div class="split-text">
+          <span class="split-eyebrow">Immobilienfinanzierung</span>
+          <h2>Die eigenen 4 Wände</h2>
+          <p>Träumst du von einem Eigenheim, aber weißt nicht, wie du es finanzieren sollst? Ich kann dir helfen, eine Immobilienfinanzierung zu finden, die zu deinen Bedürfnissen und Zielen passt.</p>
+          <p>Der Kauf einer Immobilie kann eine der größten finanziellen Entscheidungen sein, die man im Leben trifft. Deshalb ist es wichtig, sich gut auf diese Entscheidung vorzubereiten und eine Finanzierung zu finden, die den finanziellen Möglichkeiten entspricht.</p>
+          <p>Ich biete individuelle Beratung, die helfen kann, die besten Finanzierungsoptionen für deine Situation zu finden.</p>
+          <div class="gw-actions">
+            <a href="index.html#kontakt" class="btn btn--primary">Jetzt anfragen</a>
+          </div>
+        </div>
+        <div class="split-visual mockup">
+          <div class="mock-card mock--fin">
+            <div class="mock-header">
+              <div class="mock-header__dots"><span></span><span></span><span></span></div>
+              <span class="mock-header__title">Finanzierungsrechner · Musterrechnung</span>
+            </div>
+            <div class="mock-body">
+              <p class="fin-label">Deine Finanzierungsübersicht</p>
+              <div class="fin-row">
+                <span class="fin-row__key">Kaufpreis</span>
+                <span class="fin-row__val">400.000 €</span>
+              </div>
+              <div class="fin-row">
+                <span class="fin-row__key">Eigenkapital (20 %)</span>
+                <span class="fin-row__val fin-row__val--teal">80.000 €</span>
+              </div>
+              <div class="fin-row">
+                <span class="fin-row__key">Darlehensbetrag</span>
+                <span class="fin-row__val">320.000 €</span>
+              </div>
+              <div class="fin-bar-wrap">
+                <div class="fin-bar-track"><div class="fin-bar-fill"></div></div>
+                <div class="fin-bar-labels">
+                  <span>Eigenkapital 20 %</span>
+                  <span>Darlehen 80 %</span>
+                </div>
+              </div>
+              <div class="fin-rate-box">
+                <div class="fin-rate-box__left">
+                  <div class="fin-rate-lbl">Monatliche Rate (Annuität)</div>
+                  <div class="fin-rate-num">1.547 €<sub>/Monat</sub></div>
+                </div>
+                <div class="fin-chips">
+                  <span class="fin-chip">Zinssatz 3,85 % p.a.</span>
+                  <span class="fin-chip">Tilgung 2,0 % p.a.</span>
+                  <span class="fin-chip">10 J. Zinsbindung</span>
+                </div>
+              </div>
+              <p class="fin-source">Musterrechnung · Zinsdaten: Interhyp, Bundesbank (2025)</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ENERGIEEFFIZIENTER NEUBAU -->
+  <section class="gw-section gw-section--white">
+    <div class="gw-inner">
+      <div class="split-row split-row--reversed">
+        <div class="split-text">
+          <span class="split-eyebrow">Förderung &amp; Neubau</span>
+          <h2>Energieeffizienter Neubau</h2>
+          <p>Ein energieeffizienter Neubau ist nicht nur umweltfreundlich, sondern auch ökonomisch sinnvoll. Wir helfen gerne dabei, die passenden Fördermöglichkeiten zu finden und langfristig Energiekosten zu sparen.</p>
+          <p>Die Kreditanstalt für Wiederaufbau (KfW) bietet eine Vielzahl von Förderprogrammen für energieeffizienten Neubau an. Des Weiteren können wir bei Landesbanken Förderungen und Zuschüsse für deine Finanzierung prüfen.</p>
+          <p>Lass uns gemeinsam deine Traumimmobilie finanzieren und dabei von den umfangreichen Fördermöglichkeiten profitieren.</p>
+          <div class="gw-actions">
+            <a href="https://www.kfw.de" target="_blank" class="btn btn--outline">www.kfw.de</a>
+            <a href="index.html#kontakt" class="btn btn--primary">Kontakt</a>
+          </div>
+        </div>
+        <div class="split-visual mockup">
+          <div class="mock-card mock--kfw">
+            <div class="mock-header">
+              <div class="mock-header__dots"><span></span><span></span><span></span></div>
+              <span class="mock-header__title">KfW Förderprogramme · Stand 2025</span>
+            </div>
+            <div class="mock-body">
+              <div class="kfw-prog">
+                <div class="kfw-prog__top">
+                  <span class="kfw-prog__badge">KfW 297 / 298</span>
+                  <span class="kfw-prog__name">BEG Wohngebäude Kredit</span>
+                </div>
+                <div class="kfw-prog__rows">
+                  <div class="kfw-prog__row"><span>Max. Darlehensbetrag</span><strong>150.000 € / WE</strong></div>
+                  <div class="kfw-prog__row"><span>Tilgungszuschuss EH 40</span><span class="gold">bis 5 % = 7.500 €</span></div>
+                  <div class="kfw-prog__row"><span>Tilgungszuschuss EH 40 NH</span><span class="gold">bis 15 % = 22.500 €</span></div>
+                </div>
+              </div>
+              <div class="kfw-prog">
+                <div class="kfw-prog__top">
+                  <span class="kfw-prog__badge">KfW 300</span>
+                  <span class="kfw-prog__name">Wohneigentum für Familien</span>
+                </div>
+                <div class="kfw-prog__rows">
+                  <div class="kfw-prog__row"><span>Max. Kredit (ab 2 Kinder)</span><strong>270.000 €</strong></div>
+                  <div class="kfw-prog__row"><span>Haushaltseinkommen</span><strong>max. 90.000 € p.a.</strong></div>
+                  <div class="kfw-prog__row"><span>Konditionen</span><span class="teal">stark subventioniert</span></div>
+                </div>
+              </div>
+              <div class="kfw-ef-wrap">
+                <p class="kfw-ef-title">Effizienzhaus-Standard (GEG 2024)</p>
+                <div class="kfw-ef-bars">
+                  <div class="kfw-ef-row kfw-ef-row--active">
+                    <span class="kfw-ef-label">EH 40</span>
+                    <div class="kfw-ef-bar-track">
+                      <div class="kfw-ef-bar-fill" style="width:60%;background:#1a4a45;">
+                        <span>≤ 40 % Referenzgebäude · KfW-förderfähig</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="kfw-ef-row">
+                    <span class="kfw-ef-label">EH 55</span>
+                    <div class="kfw-ef-bar-track">
+                      <div class="kfw-ef-bar-fill" style="width:80%;background:#6b8f71;opacity:.7;">
+                        <span>≤ 55 % · GEG-Mindeststandard Neubau</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <p class="kfw-source">Quelle: kfw.de · Stand Januar 2025</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FRAGEN -->
+  <section class="gw-section gw-section--light">
+    <div class="gw-inner">
+      <div class="gw-header">
+        <h2 class="gw-title">Erhalte Antworten auf deine Fragen</h2>
+      </div>
+      <div class="fragen-grid">
+        <div class="frage-item">
+          <div class="frage-icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="24" cy="30" r="12" stroke="currentColor" stroke-width="2"/>
+              <path d="M18 30 Q18 24 24 24 Q30 24 30 30" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <path d="M12 18 L8 14 M36 18 L40 14 M24 16 L24 10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <circle cx="24" cy="30" r="2" fill="currentColor"/>
+              <text x="24" y="34" text-anchor="middle" font-size="8" fill="currentColor" font-weight="700">€</text>
+            </svg>
+          </div>
+          <p>Wie viel Kredit bekomme ich eigentlich?</p>
+        </div>
+        <div class="frage-item">
+          <div class="frage-icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="8" y="28" width="8" height="12" rx="1" stroke="currentColor" stroke-width="2"/>
+              <rect x="20" y="20" width="8" height="20" rx="1" stroke="currentColor" stroke-width="2"/>
+              <rect x="32" y="12" width="8" height="28" rx="1" stroke="currentColor" stroke-width="2"/>
+              <text x="24" y="14" text-anchor="middle" font-size="10" fill="currentColor" font-weight="700">%</text>
+            </svg>
+          </div>
+          <p>Welche Zinsen kriege ich für meinen Kredit?</p>
+        </div>
+        <div class="frage-item">
+          <div class="frage-icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M10 36 Q10 28 18 24 L24 20 L30 24 Q38 28 38 36" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <circle cx="24" cy="16" r="6" stroke="currentColor" stroke-width="2"/>
+              <text x="24" y="34" text-anchor="middle" font-size="7" fill="currentColor" font-weight="700">%</text>
+              <path d="M16 40 L32 40" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <p>Wie hoch ist die monatliche Rate?</p>
+        </div>
+        <div class="frage-item">
+          <div class="frage-icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M24 10 Q32 10 36 18 Q40 26 34 32 L24 40 L14 32 Q8 26 12 18 Q16 10 24 10Z" stroke="currentColor" stroke-width="2"/>
+              <text x="24" y="28" text-anchor="middle" font-size="11" fill="currentColor" font-weight="700">€</text>
+            </svg>
+          </div>
+          <p>Wie viel Eigenkapital brauche ich eigentlich?</p>
+        </div>
+        <div class="frage-item">
+          <div class="frage-icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="10" y="10" width="28" height="30" rx="2" stroke="currentColor" stroke-width="2"/>
+              <line x1="15" y1="18" x2="33" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <line x1="15" y1="24" x2="33" y2="24" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <line x1="15" y1="30" x2="25" y2="30" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <line x1="30" y1="36" x2="38" y2="36" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <line x1="34" y1="32" x2="34" y2="40" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <p>Wie hoch sind die Nebenkosten?</p>
+        </div>
+        <div class="frage-item">
+          <div class="frage-icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M10 26 L24 12 L38 26 L38 40 L10 40 Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+              <rect x="19" y="30" width="10" height="10" stroke="currentColor" stroke-width="2"/>
+              <text x="24" y="26" text-anchor="middle" font-size="8" fill="currentColor" font-weight="700">$</text>
+            </svg>
+          </div>
+          <p>Worauf muss ich bei der Finanzierung achten?</p>
+        </div>
+        <div class="frage-item">
+          <div class="frage-icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="8" y="14" width="24" height="26" rx="2" stroke="currentColor" stroke-width="2"/>
+              <path d="M16 14 L16 10 M24 14 L24 10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <line x1="13" y1="22" x2="27" y2="22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <line x1="13" y1="28" x2="27" y2="28" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <circle cx="36" cy="34" r="6" stroke="currentColor" stroke-width="2"/>
+              <text x="36" y="37" text-anchor="middle" font-size="7" fill="currentColor" font-weight="700">€</text>
+            </svg>
+          </div>
+          <p>Welche Möglichkeiten der Finanzierung gibt es?</p>
+        </div>
+        <div class="frage-item">
+          <div class="frage-icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="8" y="12" width="32" height="28" rx="3" stroke="currentColor" stroke-width="2"/>
+              <line x1="8" y1="20" x2="40" y2="20" stroke="currentColor" stroke-width="2"/>
+              <line x1="16" y1="8" x2="16" y2="16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <line x1="32" y1="8" x2="32" y2="16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <circle cx="24" cy="30" r="5" stroke="currentColor" stroke-width="2"/>
+              <line x1="24" y1="27" x2="24" y2="30" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <line x1="24" y1="30" x2="27" y2="30" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <p>Welche Zinsbindung ist die richtige?</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABLAUF DER BERATUNG -->
+  <section class="gw-section gw-section--dark">
+    <div class="gw-inner">
+      <div class="gw-header">
+        <span class="gw-eyebrow">Schritt für Schritt</span>
+        <h2 class="gw-title">Ablauf der Beratung</h2>
+        <p class="gw-subtitle">Von der ersten Idee bis zur Schlüsselübergabe begleite ich dich durch jeden Schritt deiner Immobilienfinanzierung.</p>
+      </div>
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-num">01</div>
+          <h3>Kennenlerngespräch</h3>
+          <p>Vorstellung des Objektes bzw. Projektes, dann schauen wir gemeinsam, was zu dir passt.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">02</div>
+          <h3>Konzept &amp; Bank finden</h3>
+          <p>Konzept erstellen und die passende Bank für dein Projekt finden.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">03</div>
+          <h3>Unterlagen prüfen</h3>
+          <p>Unterlagen zusammentragen und gemeinsam prüfen. Ich helfe dir dabei.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">04</div>
+          <h3>Konditionsklärung</h3>
+          <p>Kostenfreie Konditionsklärung mit Banken ohne Schufa-Abfrage.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">05</div>
+          <h3>Notartermin</h3>
+          <p>Mit der Bankzusage die Kreditunterlagen besprechen und den Notartermin vorbereiten.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEINE VORTEILE -->
+  <section class="gw-section gw-section--light">
+    <div class="gw-inner">
+      <div class="gw-header">
+        <span class="gw-eyebrow">Warum mit mir</span>
+        <h2 class="gw-title">Deine Vorteile</h2>
+        <p class="gw-subtitle">Ich stehe an deiner Seite, von der ersten Anfrage bis zur finalen Unterschrift und darüber hinaus.</p>
+      </div>
+      <div class="gw-grid gw-grid--4">
+        <div class="gw-card">
+          <div class="gw-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </div>
+          <h3>Individuelle Beratung</h3>
+          <p>Kein Standardangebot. Ich analysiere deine persönliche Situation und finde die Finanzierung, die wirklich zu dir passt.</p>
+        </div>
+        <div class="gw-card">
+          <div class="gw-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          <h3>Bankenvergleich</h3>
+          <p>Ich vergleiche für dich Angebote aus einem breiten Netzwerk von Banken und Finanzierern, um die besten Konditionen für dich herauszuholen.</p>
+        </div>
+        <div class="gw-card">
+          <div class="gw-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
+          </div>
+          <h3>KfW &amp; Förderung</h3>
+          <p>Ich prüfe alle staatlichen Förderprogramme wie KfW, Landesbanken und Zuschüsse, damit du kein Geld verschenkst.</p>
+        </div>
+        <div class="gw-card">
+          <div class="gw-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <h3>Begleitung bis zum Schluss</h3>
+          <p>Ich bin auch während der Bauphase und Auszahlungsphase für dich da und sichere rechtzeitig die besten Anschlusskonditionen.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BAUPHASE & TERMIN -->
+  <section class="gw-section gw-section--gradient">
+    <div class="bauphase-inner">
+      <span class="gw-eyebrow" style="text-align:center;">Dein nächster Schritt</span>
+      <h2 class="gw-title" style="color:#fff;text-align:center;margin-bottom:24px;">Bereit, deinen Traum zu verwirklichen?</h2>
+      <p>Wir sind auch bei der Bauphase und Auszahlungsphase immer noch begleitend und kümmern uns auch rechtzeitig darum, die besten Konditionen bei der späteren Anschlussfinanzierung zu sichern.</p>
+      <p class="lead-text">Such dir ein für dich passendes Zeitfenster heraus und lass uns schauen, wie wir deinen Traum vom Eigentum erfüllen:</p>
+      <a href="http://immobilienfinanzierung.terence-mueller.de" target="_blank" class="btn btn--gold">Termin vereinbaren →</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <div class="footer__logo">
+            <img src="Bilder/Logo.png" alt="Terence Müller Logo" class="nav__logo-img" />
+          </div>
+          <p class="footer__tagline">Dein Finanzberater</p>
+          <p class="footer__copy">Über 10 Jahre Erfahrung · Über 300 Kunden</p>
+        </div>
+        <div class="footer__links">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="finanzberatung.html">Finanzberatung</a></li>
+            <li><a href="gewerbeversicherung.html">Gewerbeversicherung</a></li>
+            <li><a href="service.html">Service</a></li>
+            <li><a href="index.html#kontakt">Kontakt</a></li>
+          </ul>
+        </div>
+        <div class="footer__links">
+          <h4>Finanzierung</h4>
+          <ul>
+            <li><a href="eigentum.html">Eigentum</a></li>
+            <li><a href="kapitalanlage.html">Kapitalanlageimmobilie</a></li>
+            <li><a href="anschlussfinanzierung.html">Anschlussfinanzierung</a></li>
+          </ul>
+        </div>
+        <div class="footer__links">
+          <h4>Rechtliches</h4>
+          <ul>
+            <li><a href="impressum.html">Impressum</a></li>
+            <li><a href="#">Datenschutz</a></li>
+            <li><a href="#">Erstinformation</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>© 2025 Terence Müller – Alle Rechte vorbehalten.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

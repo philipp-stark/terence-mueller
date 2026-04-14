@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Impressum – Terence Müller</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .impressum-page {
+      background: var(--c-bg);
+      min-height: 100vh;
+      padding-top: calc(var(--nav-h) + 60px);
+      padding-bottom: 100px;
+    }
+
+    .impressum-wrap {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .impressum-wrap h1 {
+      font-size: 2.25rem;
+      font-weight: 700;
+      color: var(--c-dark);
+      margin-bottom: 8px;
+      letter-spacing: -.02em;
+    }
+
+    .impressum-wrap .lead {
+      font-size: 1rem;
+      color: var(--c-text-muted);
+      margin-bottom: 56px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid var(--c-border);
+    }
+
+    .impressum-block {
+      margin-bottom: 44px;
+    }
+
+    .impressum-block h2 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--c-dark);
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      margin-bottom: 16px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--c-gold);
+      display: inline-block;
+    }
+
+    .impressum-block p {
+      font-size: .9375rem;
+      color: var(--c-text);
+      line-height: 1.8;
+      margin-bottom: 12px;
+    }
+
+    .impressum-block p:last-child {
+      margin-bottom: 0;
+    }
+
+    .impressum-block a {
+      color: var(--c-teal-mid);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .impressum-block a:hover {
+      color: var(--c-teal);
+    }
+
+    .impressum-block ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 12px;
+    }
+
+    .impressum-block ul li {
+      font-size: .9375rem;
+      color: var(--c-text);
+      line-height: 1.8;
+      padding-left: 16px;
+      position: relative;
+    }
+
+    .impressum-block ul li::before {
+      content: '·';
+      position: absolute;
+      left: 0;
+      color: var(--c-gold);
+      font-weight: 700;
+    }
+
+    .impressum-reg-item {
+      background: var(--c-bg-card);
+      border: 1px solid var(--c-border);
+      border-radius: var(--radius-sm);
+      padding: 20px 24px;
+      margin-bottom: 12px;
+    }
+
+    .impressum-reg-item strong {
+      display: block;
+      font-size: .9375rem;
+      color: var(--c-dark);
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .impressum-reg-item span {
+      font-size: .875rem;
+      color: var(--c-text-muted);
+      font-family: monospace;
+      letter-spacing: .03em;
+    }
+
+    .impressum-divider {
+      height: 1px;
+      background: var(--c-border);
+      margin: 48px 0;
+    }
+
+    /* ── Mobile (≤ 767px) ── */
+    @media (max-width: 767px) {
+      .impressum-page { padding-top: calc(var(--nav-h) + 32px); padding-bottom: 64px; }
+      .impressum-wrap { padding: 0 20px; }
+      .impressum-wrap h1 { font-size: 1.75rem; }
+      .impressum-reg-item { padding: 16px; }
+      .impressum-divider { margin: 32px 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="nav scrolled" id="navbar">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">
+        <img src="Bilder/Logo.png" alt="Terence Müller Logo" class="nav__logo-img" />
+      </a>
+      <ul class="nav__links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="finanzberatung.html">Finanzberatung</a></li>
+        <li class="nav__has-dropdown">
+          <a href="eigentum.html">Finanzierung <span class="nav__chevron">▾</span></a>
+          <ul class="nav__dropdown">
+            <li><a href="eigentum.html">Eigentum</a></li>
+            <li><a href="kapitalanlage.html">Kapitalanlageimmobilie</a></li>
+            <li><a href="anschlussfinanzierung.html">Anschlussfinanzierung</a></li>
+          </ul>
+        </li>
+        <li><a href="gewerbeversicherung.html">Gewerbeversicherung</a></li>
+        <li><a href="service.html">Service</a></li>
+      </ul>
+      <a href="index.html#kontakt" class="btn btn--primary nav__cta">Gespräch vereinbaren</a>
+    </div>
+  </nav>
+
+  <div class="impressum-page">
+    <div class="impressum-wrap">
+
+      <h1>Impressum</h1>
+      <p class="lead">Angaben gemäß § 5 TMG</p>
+
+      <!-- Kontakt -->
+      <div class="impressum-block">
+        <h2>Kontakt</h2>
+        <p>
+          <strong>Terence Müller</strong><br />
+          Ungebundener Finanzberater<br />
+          Für die Themen Vorsorge, Absicherungen und Finanzierungen
+        </p>
+        <p>
+          Rosenthaler Weg 64<br />
+          13127 Berlin
+        </p>
+        <p>
+          E-Mail: <a href="mailto:finanzberatung@terence-mueller.de">finanzberatung@terence-mueller.de</a><br />
+          Telefon: 0176 64 88 96 10
+        </p>
+      </div>
+
+      <div class="impressum-divider"></div>
+
+      <!-- Erlaubnisse -->
+      <div class="impressum-block">
+        <h2>Erteilte Erlaubnis</h2>
+
+        <div class="impressum-reg-item">
+          <strong>Finanzanlagenvermittler nach § 34f Abs. 1 GewO</strong>
+          <span>Registrierungsnummer: D-F-107-EPCH-33</span>
+        </div>
+        <div class="impressum-reg-item">
+          <strong>Versicherungsmakler nach § 34d Abs. 1 GewO</strong>
+          <span>Registrierungsnummer: D-21ZI-U5Y4A-84</span>
+        </div>
+        <div class="impressum-reg-item">
+          <strong>Immobiliardarlehensvermittler nach § 34i Abs. 1 GewO</strong>
+          <span>Registrierungsnummer: D-W-107-3Q2S-64</span>
+        </div>
+      </div>
+
+      <!-- Registerstelle -->
+      <div class="impressum-block">
+        <h2>Registerstelle</h2>
+        <p>
+          Deutscher Industrie- und Handelskammertag (DIHK) e.V.<br />
+          Breite Straße 29<br />
+          10178 Berlin<br />
+          Tel. 0180 600 58 50 (Festnetzpreis 0,20 EUR; Mobilfunkpreise max. 0,60 € / Anruf)<br />
+          <a href="http://www.vermittlerregister.info" target="_blank" rel="noopener">www.vermittlerregister.info</a>
+        </p>
+      </div>
+
+      <div class="impressum-divider"></div>
+
+      <!-- Berufsbezeichnung -->
+      <div class="impressum-block">
+        <h2>Berufsbezeichnung</h2>
+
+        <p><strong>Immobiliardarlehensvermittler nach § 34i Abs. 1 GewO</strong> – Bundesrepublik Deutschland</p>
+        <p>Berufsrechtliche Regelungen: § 34 i Gewerbeordnung (GewO), § 675 a Bürgerliches Gesetzbuch (BGB), Artikel 247 Einführungsgesetz BGB (EGBGB), Verordnung über Immobiliardarlehensvermittlung (ImmVermV), abrufbar unter <a href="http://www.gesetze-im-internet.de" target="_blank" rel="noopener">www.gesetze-im-internet.de</a></p>
+
+        <p><strong>Finanzanlagenvermittler nach § 34f Abs. 1 Satz 1 Nr. 1 und Nr. 2 GewO</strong> – Bundesrepublik Deutschland</p>
+        <p>Berufsrechtliche Regelungen: § 34 f Gewerbeordnung (GewO), Verordnung über die Finanzanlagenvermittlung (FinVermV), abrufbar unter <a href="http://www.gesetze-im-internet.de" target="_blank" rel="noopener">www.gesetze-im-internet.de</a></p>
+
+        <p><strong>Versicherungsmakler mit Erlaubnis nach § 34 d Abs. 1 GewO</strong> – Bundesrepublik Deutschland</p>
+        <p>Berufsrechtliche Regelungen: § 34 d Gewerbeordnung (GewO), §§ 59–68 Gesetz über den Versicherungsvertrag (VVG), Verordnung über die Versicherungsvermittlung und -beratung (VersVermV), abrufbar unter <a href="http://www.gesetze-im-internet.de" target="_blank" rel="noopener">www.gesetze-im-internet.de</a></p>
+      </div>
+
+      <!-- Berufsrechtliche Regelungen Liste -->
+      <div class="impressum-block">
+        <h2>Berufsrechtliche Regelungen</h2>
+        <ul>
+          <li>§ 34 f Gewerbeordnung</li>
+          <li>FinVermV</li>
+          <li>§ 34 d Gewerbeordnung</li>
+          <li>§§ 59–68 VVG</li>
+          <li>VersVermV</li>
+          <li>§ 34 i Gewerbeordnung</li>
+        </ul>
+        <p>Die berufsrechtlichen Regelungen können über die vom Bundesministerium der Justiz und von der juris GmbH betriebene Homepage <a href="http://www.gesetze-im-internet.de" target="_blank" rel="noopener">www.gesetze-im-internet.de</a> eingesehen und abgerufen werden.</p>
+      </div>
+
+      <div class="impressum-divider"></div>
+
+      <!-- Haftpflicht -->
+      <div class="impressum-block">
+        <h2>Vermögensschadenhaftpflichtversicherung</h2>
+        <p>Für die gewerbsmäßige Vermittlung von Versicherungsverträgen als Versicherungsvermittler besteht eine Berufshaftpflichtversicherung gemäß § 34d Abs. 2 Nr. 3 GewO bei der</p>
+        <p>
+          VICTORIA Versicherung AG<br />
+          22297 Hamburg
+        </p>
+      </div>
+
+      <!-- Verantwortlicher -->
+      <div class="impressum-block">
+        <h2>Verantwortlicher nach § 55 RStV</h2>
+        <p>
+          Terence Müller<br />
+          Rosenthaler Weg 64<br />
+          13127 Berlin
+        </p>
+      </div>
+
+      <div class="impressum-divider"></div>
+
+      <!-- Online-Streitbeilegung -->
+      <div class="impressum-block">
+        <h2>Online-Streitbeilegung</h2>
+        <p>Unter <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener">https://ec.europa.eu/consumers/odr</a> stellt die Europäische Kommission eine Plattform zur Online-Streitbeilegung bereit, die Verbraucher für die Beilegung einer Streitigkeit nutzen können. Unter dem Link finden Sie auch weitere Informationen zum Thema Streitschlichtung.</p>
+      </div>
+
+      <!-- Außergerichtliche Streitbeilegung -->
+      <div class="impressum-block">
+        <h2>Außergerichtliche Streitbeilegung</h2>
+        <p>Folgende Schlichtungsstellen können zur außergerichtlichen Streitbeilegung angerufen werden:</p>
+
+        <p>
+          <strong>Versicherungsombudsmann e.V.</strong><br />
+          Postfach 080632, 10006 Berlin<br />
+          Telefon: +49 30 20 60 58–0<br />
+          Telefax: +49 30 20 60 58–58<br />
+          E-Mail: <a href="mailto:beschwerde@versicherungsombudsmann.de">beschwerde@versicherungsombudsmann.de</a><br />
+          <a href="http://www.versicherungsombudsmann.de" target="_blank" rel="noopener">www.versicherungsombudsmann.de</a>
+        </p>
+
+        <p>
+          <strong>Ombudsmann für die Private Kranken- und Pflegeversicherung</strong><br />
+          Postfach 060222, 10052 Berlin<br />
+          Telefon: 01802 55 04 44 (6 Cent/Anruf aus dem deutschen Festnetz, höchstens 42 Cent/Min aus Mobilfunknetzen)<br />
+          Telefax: 030 20 45 89 31<br />
+          <a href="http://www.pkv-ombudsmann.de" target="_blank" rel="noopener">www.pkv-ombudsmann.de</a>
+        </p>
+
+        <p>
+          <strong>Schlichtungsstelle für Bausparverträge</strong><br />
+          Betrifft Ihre Beschwerde die Vermittlung eines Bausparvertrages, besteht die Zuständigkeit der Schlichtungsstelle des Verbandes der privaten Bausparkassen e.V.<br />
+          Postfach 303079, 10730 Berlin<br />
+          Telefon: 030 / 59 00 91-500 und -550<br />
+          Telefax: 030 / 59 00 91 501<br />
+          <a href="http://www.schlichtungsstelle-bausparen.de" target="_blank" rel="noopener">www.schlichtungsstelle-bausparen.de</a> · <a href="mailto:info@schlichtungsstelle-bausparen.de">info@schlichtungsstelle-bausparen.de</a>
+        </p>
+
+        <p>
+          <strong>Schlichtungsstelle Deutsche Bundesbank</strong><br />
+          Betrifft Ihre Beschwerde eine Darlehensvermittlung, besteht die Zuständigkeit der Schlichtungsstelle bei der Deutschen Bundesbank.<br />
+          Postfach 11 12 32, 60047 Frankfurt<br />
+          Telefon: 069 / 23 88 19 07<br />
+          Telefax: 069 / 70 90 90 99 01<br />
+          <a href="http://www.bundesbank.de/Navigation/DE/Service/Schlichtungsstelle/schlichtungsstelle.html" target="_blank" rel="noopener">www.bundesbank.de</a> · <a href="mailto:schlichtung@bundesbank.de">schlichtung@bundesbank.de</a>
+        </p>
+
+        <p>
+          <strong>Schlichtungsstelle für Kapitalanlagen und Immobilien</strong><br />
+          Sofern Ihre Beschwerde die Vermittlung einer Kapitalanlage, insbesondere eines Investmentfonds oder eines Alternativen Investmentfonds sowie die Vermittlung einer Immobilie betrifft, besteht die Zuständigkeit der Schlichtungsstelle für gewerbliche Versicherungs-, Anlage- und Kreditvermittlung.<br />
+          Postfach 10 14 24, 20009 Hamburg<br />
+          Telefon: +49 (0)40 69 650 890<br />
+          Telefax: +49 (0)40 69 650 891<br />
+          <a href="http://www.schlichtung-finanzberatung.de" target="_blank" rel="noopener">www.schlichtung-finanzberatung.de</a> · <a href="mailto:kontakt@schlichtung-finanzberatung.de">kontakt@schlichtung-finanzberatung.de</a>
+        </p>
+      </div>
+
+      <div class="impressum-divider"></div>
+
+      <!-- Transparenzverordnung -->
+      <div class="impressum-block">
+        <h2>Transparenzverordnung</h2>
+        <p>Informationen gemäß der Verordnung über nachhaltigkeitsbezogene Offenlegungspflichten im Finanzdienstleistungssektor (Stand 10.03.2021)</p>
+        <p>Potentielle Nachhaltigkeitsrisiken bei den vermittelten Versicherungsanlage- und Investmentprodukten werden grundsätzlich derzeit bei der Beratung nicht berücksichtigt. Nachhaltigkeitsrisiko ist dabei ein Ereignis oder eine Bedingung in den Bereichen Umwelt, Soziales oder Unternehmensführung, dessen beziehungsweise deren Eintreten tatsächlich oder potenziell wesentliche negative Auswirkungen auf den Wert der Investition haben könnte. Die genauen Definitionen und Kriterien (technische Regulierungsstandards) zur Anwendung der Bestimmungen der Transparenzverordnung werden durch den europäischen Gesetzgeber erst noch festgelegt und sind derzeit zum Teil ungewiss. Bevor eine Einbeziehung der konkreten Nachhaltigkeitsrisiken einer Anlage in die Beratung erfolgen kann, müssen zum einen konkretere Vorgaben des Gesetzgebers vorliegen als auch zum anderen diese Vorgaben bei der Produktgestaltung durch die Produktgeber Berücksichtigung finden und entsprechende Informationen bereit gestellt und geprüft werden. Es ist insofern geplant, potentielle Nachhaltigkeitsrisiken in die Beratung von Versicherungsanlage- und Investmentprodukten einzubeziehen, sobald die entsprechenden Regelungen des europäischen Gesetzgebers vorliegen als auch die entsprechenden Informationen durch die Produktgeber bereit gestellt und geprüft worden sind.</p>
+        <p>Auf Anfrage des Kunden werden derzeit bereits ökologisch orientierte verantwortungsbewusste Versicherungsanlage- und Investmentprodukte in die Beratung einbezogen, die ökologische und/oder soziale Aspekte und/oder die Unternehmensführung beachten.</p>
+        <p>Sowohl die Vergütung für die Beratung von Versicherungsanlage- und Investmentprodukten, die die tecis Finanzdienstleistungen AG von ihren Produktpartnern erhält, als auch die Vergütung, die die tecis Finanzdienstleistungen an ihre selbstständigen Handelsvertreter zahlt, werden nicht von den Nachhaltigkeitsrisiken, die mit den vermittelten Produkten einhergehen, beeinflusst. Dies bedeutet insbesondere, dass die Vergütungshöhe weder von der Nachhaltigkeit der Anlage noch den Nachhaltigkeitsrisiken des vermittelten Produktes positiv oder negativ beeinflusst wird.</p>
+      </div>
+
+      <!-- Bildnachweis -->
+      <div class="impressum-block">
+        <h2>Bildnachweis</h2>
+        <p>Sean Pollock on Unsplash · Brooke Cagle on Unsplash</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <div class="footer__logo">
+            <img src="Bilder/Logo.png" alt="Terence Müller Logo" class="nav__logo-img" />
+          </div>
+          <p class="footer__tagline">Dein Finanzberater</p>
+          <p class="footer__copy">Über 10 Jahre Erfahrung · Über 300 Kunden</p>
+        </div>
+        <div class="footer__links">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="finanzberatung.html">Finanzberatung</a></li>
+            <li><a href="gewerbeversicherung.html">Gewerbeversicherung</a></li>
+            <li><a href="service.html">Service</a></li>
+            <li><a href="index.html#kontakt">Kontakt</a></li>
+          </ul>
+        </div>
+        <div class="footer__links">
+          <h4>Finanzierung</h4>
+          <ul>
+            <li><a href="eigentum.html">Eigentum</a></li>
+            <li><a href="kapitalanlage.html">Kapitalanlageimmobilie</a></li>
+            <li><a href="anschlussfinanzierung.html">Anschlussfinanzierung</a></li>
+          </ul>
+        </div>
+        <div class="footer__links">
+          <h4>Rechtliches</h4>
+          <ul>
+            <li><a href="impressum.html">Impressum</a></li>
+            <li><a href="#">Datenschutz</a></li>
+            <li><a href="#">Erstinformation</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>© 2025 Terence Müller – Alle Rechte vorbehalten.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

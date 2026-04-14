@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kapitalanlageimmobilie – Finanzierung | Terence Müller</title>
+  <meta name="description" content="Immobilien als Kapitalanlage: Eigenkapitalrendite, Mieteinnahmen, Steuervorteile und professionelle Begleitung durch Terence Müller." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* PAGE HERO */
+    .page-hero {
+      position: relative;
+      background: var(--c-dark);
+      padding: calc(var(--nav-h) + 80px) 24px 90px;
+      overflow: hidden;
+      text-align: center;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: url('Bilder/Wallpaper.jpg') center/cover no-repeat;
+      opacity: .18;
+    }
+    .page-hero__inner {
+      position: relative; z-index: 2;
+      max-width: 720px; margin: 0 auto;
+    }
+    .page-hero__eyebrow {
+      display: inline-block;
+      font-size: .8rem; font-weight: 600;
+      letter-spacing: .18em; text-transform: uppercase;
+      color: var(--c-gold); margin-bottom: 20px;
+      padding: 6px 16px;
+      border: 1px solid rgba(201,164,106,.35);
+      border-radius: 50px;
+    }
+    .page-hero h1 {
+      font-size: clamp(2.25rem, 5vw, 3.75rem);
+      font-weight: 700; color: #fff;
+      letter-spacing: -.02em; line-height: 1.15; margin-bottom: 20px;
+    }
+    .page-hero p { font-size: 1.0625rem; color: rgba(255,255,255,.75); line-height: 1.8; }
+
+    /* === UNIFIED SECTION SYSTEM === */
+    .gw-section { padding: 90px 0; }
+    .gw-section--dark  { background: var(--c-dark); }
+    .gw-section--light { background: var(--c-bg); }
+    .gw-section--white { background: var(--c-bg-card); }
+
+    .gw-inner { max-width: 1300px; margin: 0 auto; padding: 0 48px; }
+
+    .gw-header { margin-bottom: 52px; max-width: 800px; }
+    .gw-eyebrow {
+      display: block; font-size: .75rem; font-weight: 600;
+      letter-spacing: .16em; text-transform: uppercase; margin-bottom: 14px;
+    }
+    .gw-section--dark .gw-eyebrow  { color: var(--c-gold); }
+    .gw-section--light .gw-eyebrow,
+    .gw-section--white .gw-eyebrow { color: var(--c-teal-mid); }
+
+    .gw-title {
+      font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+      font-weight: 700; letter-spacing: -.02em; line-height: 1.2; margin-bottom: 14px;
+    }
+    .gw-section--dark .gw-title  { color: #fff; }
+    .gw-section--light .gw-title,
+    .gw-section--white .gw-title { color: var(--c-dark); }
+
+    .gw-subtitle { font-size: .9375rem; line-height: 1.8; max-width: 680px; }
+    .gw-section--dark .gw-subtitle  { color: rgba(255,255,255,.7); }
+    .gw-section--light .gw-subtitle,
+    .gw-section--white .gw-subtitle { color: var(--c-text-muted); }
+
+    /* Grids */
+    .gw-grid { display: grid; gap: 20px; }
+    .gw-grid--4 { grid-template-columns: repeat(4, 1fr); }
+    .gw-grid--3 { grid-template-columns: repeat(3, 1fr); }
+    .gw-grid--2 { grid-template-columns: repeat(2, 1fr); }
+
+    /* Base card */
+    .gw-card {
+      border-radius: var(--radius-md);
+      padding: 32px 28px;
+      position: relative; overflow: hidden;
+      transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
+    }
+    .gw-card::before {
+      content: '';
+      position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
+      transform: scaleX(0); transform-origin: left;
+      transition: transform var(--transition);
+    }
+    .gw-card:hover { transform: translateY(-4px); }
+    .gw-card:hover::before { transform: scaleX(1); }
+    .gw-card__icon {
+      width: 48px; height: 48px; border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 18px;
+    }
+    .gw-card__icon svg { width: 24px; height: 24px; }
+    .gw-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 10px; line-height: 1.3; }
+    .gw-card p  { font-size: .875rem; line-height: 1.75; }
+
+    /* Dark section cards */
+    .gw-section--dark .gw-card {
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.08);
+    }
+    .gw-section--dark .gw-card:hover { border-color: rgba(201,164,106,.3); }
+    .gw-section--dark .gw-card::before { background: linear-gradient(90deg, var(--c-teal-mid), var(--c-gold)); }
+    .gw-section--dark .gw-card__icon  { background: rgba(201,164,106,.12); }
+    .gw-section--dark .gw-card__icon svg { color: var(--c-gold); }
+    .gw-section--dark .gw-card h3 { color: #fff; }
+    .gw-section--dark .gw-card p  { color: rgba(255,255,255,.6); }
+
+    /* Light / white section cards */
+    .gw-section--light .gw-card,
+    .gw-section--white .gw-card {
+      background: var(--c-bg-card);
+      border: 1px solid var(--c-border);
+      box-shadow: 0 2px 8px rgba(15,38,38,.05);
+    }
+    .gw-section--light .gw-card:hover,
+    .gw-section--white .gw-card:hover { box-shadow: var(--shadow-lg); }
+    .gw-section--light .gw-card::before,
+    .gw-section--white .gw-card::before { background: linear-gradient(90deg, var(--c-teal), var(--c-gold)); }
+    .gw-section--light .gw-card__icon,
+    .gw-section--white .gw-card__icon { background: linear-gradient(135deg, rgba(26,74,69,.08), rgba(26,74,69,.16)); }
+    .gw-section--light .gw-card__icon svg,
+    .gw-section--white .gw-card__icon svg { color: var(--c-teal-mid); }
+    .gw-section--light .gw-card h3,
+    .gw-section--white .gw-card h3 { color: var(--c-dark); }
+    .gw-section--light .gw-card p,
+    .gw-section--white .gw-card p  { color: var(--c-text-muted); }
+
+    /* Actions row */
+    .gw-actions { display: flex; gap: 12px; margin-top: 40px; flex-wrap: wrap; }
+
+    /* Split layout */
+    .split-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .split-row--reversed { direction: rtl; }
+    .split-row--reversed > * { direction: ltr; }
+
+    .split-text .split-eyebrow {
+      font-size: .75rem; font-weight: 600;
+      letter-spacing: .16em; text-transform: uppercase;
+      margin-bottom: 14px; display: block;
+    }
+    .gw-section--light .split-eyebrow,
+    .gw-section--white .split-eyebrow { color: var(--c-teal-mid); }
+    .gw-section--dark .split-eyebrow  { color: var(--c-gold); }
+
+    .split-text h2 {
+      font-size: clamp(1.75rem, 3vw, 2.5rem);
+      font-weight: 700; letter-spacing: -.02em;
+      line-height: 1.2; margin-bottom: 20px;
+    }
+    .gw-section--light .split-text h2,
+    .gw-section--white .split-text h2 { color: var(--c-dark); }
+    .gw-section--dark .split-text h2  { color: #fff; }
+
+    .split-text p {
+      font-size: .9375rem; line-height: 1.8; margin-bottom: 14px;
+    }
+    .gw-section--light .split-text p,
+    .gw-section--white .split-text p { color: var(--c-text-muted); }
+    .gw-section--dark .split-text p  { color: rgba(255,255,255,.7); }
+
+    .split-visual {
+      border-radius: var(--radius-lg);
+      min-height: 320px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .gw-section--light .split-visual,
+    .gw-section--white .split-visual {
+      background: linear-gradient(135deg, rgba(26,74,69,.07) 0%, rgba(201,164,106,.1) 100%);
+      border: 1px solid var(--c-border);
+    }
+    .gw-section--dark .split-visual {
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.08);
+    }
+
+    /* ── Mockup shared ── */
+    .split-visual.mockup {
+      background: none !important;
+      border: none !important;
+      padding: 0;
+      align-items: stretch;
+    }
+    .mock-card {
+      width: 100%;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 24px 64px rgba(15,38,38,.13), 0 4px 16px rgba(15,38,38,.07);
+      font-size: .8125rem;
+    }
+    .mock-header {
+      display: flex; align-items: center; gap: 8px;
+      padding: 13px 18px;
+    }
+    .mock-header__dots { display: flex; gap: 5px; }
+    .mock-header__dots span {
+      width: 9px; height: 9px; border-radius: 50%;
+      background: rgba(255,255,255,.22);
+    }
+    .mock-header__title {
+      font-size: .72rem; font-weight: 600;
+      color: rgba(255,255,255,.85); letter-spacing: .05em;
+      margin-left: 4px;
+    }
+    .mock-body { padding: 20px; background: #fff; }
+
+    /* ── Mockup: Rendite-Rechner ── */
+    .mock--rendite .mock-header { background: var(--c-dark); }
+    .rend-kpi-row {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 8px; margin-bottom: 14px;
+    }
+    .rend-kpi {
+      background: var(--c-bg);
+      border-radius: 10px; padding: 11px 13px;
+    }
+    .rend-kpi__label {
+      font-size: .62rem; font-weight: 600; text-transform: uppercase;
+      letter-spacing: .09em; color: var(--c-text-muted); margin-bottom: 4px;
+    }
+    .rend-kpi__val {
+      font-size: 1.1rem; font-weight: 800; color: var(--c-dark); line-height: 1;
+    }
+    .rend-kpi__val--gold { color: #b8873a; }
+    .rend-kpi__val--teal { color: var(--c-teal); }
+    .rend-divider {
+      height: 1px; background: var(--c-border); margin: 12px 0;
+    }
+    .rend-row {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 7px 10px; border-radius: 8px;
+      background: var(--c-bg); margin-bottom: 5px;
+    }
+    .rend-row__key { color: var(--c-text-muted); font-size: .74rem; }
+    .rend-row__val { font-weight: 700; color: var(--c-dark); font-size: .78rem; }
+    .rend-row__val--pos { color: #2e7d5e; }
+    .rend-progress-label {
+      font-size: .63rem; font-weight: 600; text-transform: uppercase;
+      letter-spacing: .09em; color: var(--c-text-muted);
+      margin: 14px 0 8px;
+    }
+    .rend-track {
+      height: 20px; background: rgba(15,38,38,.08);
+      border-radius: 6px; overflow: hidden; margin-bottom: 5px;
+      position: relative;
+    }
+    .rend-fill {
+      height: 100%; border-radius: 6px;
+      display: flex; align-items: center; padding-left: 10px;
+    }
+    .rend-fill span { font-size: .62rem; color: #fff; font-weight: 600; white-space: nowrap; }
+    .rend-source {
+      font-size: .61rem; color: var(--c-text-muted);
+      margin-top: 10px; text-align: right; opacity: .7;
+    }
+
+    /* ── Mockup: Sanierung/Energie ── */
+    .mock--sanierung .mock-header { background: #2e5e3a; }
+    .san-rating-wrap { margin-bottom: 14px; }
+    .san-rating-title {
+      font-size: .63rem; font-weight: 600; text-transform: uppercase;
+      letter-spacing: .09em; color: var(--c-text-muted); margin-bottom: 8px;
+    }
+    .san-rating-row {
+      display: flex; align-items: center; gap: 8px; margin-bottom: 5px;
+    }
+    .san-rating-label {
+      font-size: .68rem; font-weight: 700; width: 26px;
+      text-align: center; color: #fff;
+      padding: 3px 0; border-radius: 4px; flex-shrink: 0;
+    }
+    .san-rating-bar {
+      flex: 1; height: 20px; border-radius: 5px;
+      display: flex; align-items: center; padding-left: 8px;
+      position: relative;
+    }
+    .san-rating-bar span {
+      font-size: .6rem; color: rgba(255,255,255,.85); font-weight: 600; white-space: nowrap;
+    }
+    .san-rating-arrow {
+      font-size: .7rem; color: var(--c-text-muted); flex-shrink: 0;
+    }
+    .san-badge {
+      font-size: .58rem; font-weight: 700; padding: 2px 7px;
+      border-radius: 99px; white-space: nowrap;
+    }
+    .san-badge--after {
+      background: rgba(46,94,58,.15); color: #2e5e3a;
+      border: 1px solid rgba(46,94,58,.3);
+    }
+    .san-badge--before {
+      background: rgba(180,80,30,.1); color: #b4501e;
+      border: 1px solid rgba(180,80,30,.2);
+    }
+    .san-kfw-row {
+      display: flex; justify-content: space-between; align-items: center;
+      background: var(--c-bg); border-radius: 9px; padding: 10px 13px; margin-bottom: 6px;
+    }
+    .san-kfw-row__key { font-size: .73rem; color: var(--c-text-muted); }
+    .san-kfw-row__val { font-size: .78rem; font-weight: 700; color: var(--c-dark); }
+    .san-kfw-row__val--gold { color: #b8873a; }
+    .san-source {
+      font-size: .61rem; color: var(--c-text-muted);
+      margin-top: 10px; text-align: right; opacity: .7;
+    }
+
+    /* Empfehlung cards (dark section) */
+    .empf-card {
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: var(--radius-md);
+      padding: 36px 30px;
+      transition: transform var(--transition), border-color var(--transition);
+    }
+    .empf-card:hover { transform: translateY(-4px); border-color: rgba(201,164,106,.35); }
+    .empf-card__num {
+      font-size: 1.8rem; font-weight: 700;
+      color: rgba(201,164,106,.35); line-height: 1; margin-bottom: 16px;
+    }
+    .empf-card h3 {
+      font-size: 1.05rem; font-weight: 700; color: #fff;
+      margin-bottom: 10px; line-height: 1.35;
+    }
+    .empf-card p {
+      font-size: .875rem; color: rgba(255,255,255,.58); line-height: 1.75; margin-bottom: 20px;
+    }
+    .empf-card .btn { font-size: .8125rem; padding: 9px 18px; }
+
+    /* Vorteile dark card variant */
+    .vorteil-card {
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: var(--radius-md);
+      padding: 30px 26px;
+      transition: transform var(--transition), border-color var(--transition);
+    }
+    .vorteil-card:hover { transform: translateY(-4px); border-color: rgba(201,164,106,.3); }
+    .vorteil-card__icon {
+      width: 48px; height: 48px; border-radius: 12px;
+      background: rgba(201,164,106,.12);
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 16px;
+    }
+    .vorteil-card__icon svg { width: 22px; height: 22px; color: var(--c-gold); }
+    .vorteil-card h3 { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 8px; }
+    .vorteil-card p  { font-size: .875rem; color: rgba(255,255,255,.55); line-height: 1.75; }
+
+    /* Gradient CTA */
+    .gw-section--gradient {
+      position: relative;
+    }
+    .gw-section--gradient::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, var(--c-dark) 0%, var(--c-teal) 60%, var(--c-teal-mid) 100%);
+      z-index: 0;
+    }
+    .gw-section--gradient .cta-inner {
+      position: relative; z-index: 1;
+    }
+    .gw-section--gradient .gw-eyebrow { color: var(--c-gold); }
+    .gw-section--gradient .gw-title   { color: #fff; }
+    .gw-section--gradient .cta-inner p { color: rgba(255,255,255,.75); }
+    .cta-inner {
+      max-width: 640px;
+      text-align: center;
+      margin: 0 auto;
+    }
+    .cta-inner p {
+      font-size: 1.0625rem;
+      line-height: 1.85;
+      margin-bottom: 36px;
+    }
+
+    /* Responsive */
+    @media (max-width: 1023px) {
+      .gw-grid--4 { grid-template-columns: repeat(2, 1fr); }
+      .gw-grid--3 { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    /* ── Mobile (≤ 767px) ── */
+    @media (max-width: 767px) {
+      .page-hero { padding: calc(var(--nav-h) + 40px) 20px 56px; }
+      .gw-section { padding: 60px 0; }
+      .gw-inner { padding: 0 20px; }
+      .gw-header { margin-bottom: 32px; }
+      .split-row { grid-template-columns: 1fr; gap: 36px; padding: 0 20px; }
+      .split-row--reversed { direction: ltr; }
+      .split-visual { min-height: 160px; padding: 24px; }
+      .rend-kpi-row { grid-template-columns: repeat(2, 1fr); }
+      .gw-grid--3 { grid-template-columns: 1fr; }
+      .gw-actions { flex-direction: column; align-items: stretch; }
+      .gw-actions .btn { justify-content: center; }
+      .cta-inner { padding: 0 16px; }
+    }
+
+    @media (max-width: 480px) {
+      .gw-grid--4,
+      .gw-grid--3,
+      .gw-grid--2 { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="nav" id="navbar">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">
+        <img src="Bilder/Logo.png" alt="Terence Müller Logo" class="nav__logo-img" />
+      </a>
+      <ul class="nav__links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="finanzberatung.html">Finanzberatung</a></li>
+        <li class="nav__has-dropdown">
+          <a href="eigentum.html">Finanzierung <span class="nav__chevron">▾</span></a>
+          <ul class="nav__dropdown">
+            <li><a href="eigentum.html">Eigentum</a></li>
+            <li><a href="kapitalanlage.html">Kapitalanlageimmobilie</a></li>
+            <li><a href="anschlussfinanzierung.html">Anschlussfinanzierung</a></li>
+          </ul>
+        </li>
+        <li><a href="gewerbeversicherung.html">Gewerbeversicherung</a></li>
+        <li><a href="service.html">Service</a></li>
+      </ul>
+      <a href="index.html#kontakt" class="btn btn--primary nav__cta">Gespräch vereinbaren</a>
+      <button class="nav__burger" id="burger" aria-label="Menü öffnen">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav__mobile" id="mobileMenu">
+      <ul>
+        <li><a href="index.html" class="mobile-link">Home</a></li>
+        <li><a href="finanzberatung.html" class="mobile-link">Finanzberatung</a></li>
+        <li><a href="eigentum.html" class="mobile-link mobile-link--sub">Eigentum</a></li>
+        <li><a href="kapitalanlage.html" class="mobile-link mobile-link--sub">Kapitalanlageimmobilie</a></li>
+        <li><a href="anschlussfinanzierung.html" class="mobile-link mobile-link--sub">Anschlussfinanzierung</a></li>
+        <li><a href="gewerbeversicherung.html" class="mobile-link">Gewerbeversicherung</a></li>
+        <li><a href="service.html" class="mobile-link">Service</a></li>
+        <li><a href="index.html#kontakt" class="btn btn--primary mobile-link">Gespräch vereinbaren</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="page-hero__inner">
+      <span class="page-hero__eyebrow">Kapitalanlageimmobilie</span>
+      <h1>Kapitalanlage-Immobilie</h1>
+      <p>Wohnen als attraktive Anlageform für den Vermögensaufbau mit Betongold</p>
+    </div>
+  </section>
+
+  <!-- VORTEILE BETONGOLD -->
+  <section class="gw-section gw-section--light">
+    <div class="gw-inner">
+      <div class="gw-header">
+        <span class="gw-eyebrow">Kapitalanlage</span>
+        <h2 class="gw-title">Vorteile bei der Geldanlage in Betongold</h2>
+        <p class="gw-subtitle">Eine Kapitalanlageimmobilie bietet dir gleich mehrere Wege, Vermögen aufzubauen, und das passiv, steuerbegünstigt und langfristig stabil.</p>
+      </div>
+      <div class="gw-grid gw-grid--4">
+
+        <!-- Card 1 -->
+        <div class="gw-card">
+          <div class="gw-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/>
+            </svg>
+          </div>
+          <h3>Eigenkapitalrendite</h3>
+          <p>Durch den Hebel des Fremdkapitals erzielst du eine deutlich höhere Rendite auf dein eingesetztes Eigenkapital als bei einer Direktanlage ohne Kredit.</p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="gw-card">
+          <div class="gw-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 14l2 2 4-4"/><rect x="3" y="3" width="18" height="18" rx="2"/>
+              <path d="M7 7h10M7 11h4"/>
+            </svg>
+          </div>
+          <h3>Steuerliche Absetzbarkeit</h3>
+          <p>Abschreibungen (AfA), Zinsen und Verwaltungskosten können steuerlich geltend gemacht werden. Das verbessert deine Rendite nachhaltig.</p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="gw-card">
+          <div class="gw-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M12 6v6l4 2"/>
+            </svg>
+          </div>
+          <h3>Mieteinnahmen</h3>
+          <p>Monatliche Mieteinnahmen sorgen für passives Einkommen, ideal für die Altersvorsorge. Ein Mietpool gleicht Leerstandsrisiken gleichmäßig aus.</p>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="gw-card">
+          <div class="gw-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+              <polyline points="9 22 9 12 15 12 15 22"/>
+            </svg>
+          </div>
+          <h3>Verwaltung</h3>
+          <p>Mit der richtigen Hausverwaltung hast du kaum Aufwand. Du profitierst vom Wertzuwachs der Immobilie, ohne dich um den täglichen Betrieb zu kümmern.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- RENDITECHECKER MOCKUP SPLIT -->
+  <section class="gw-section gw-section--white">
+    <div class="gw-inner">
+      <div class="split-row">
+        <div class="split-visual mockup">
+          <div class="mock-card mock--rendite">
+            <div class="mock-header">
+              <div class="mock-header__dots"><span></span><span></span><span></span></div>
+              <span class="mock-header__title">Rendite-Übersicht · Musterrechnung</span>
+            </div>
+            <div class="mock-body">
+              <div class="rend-kpi-row">
+                <div class="rend-kpi">
+                  <div class="rend-kpi__label">Kaufpreis</div>
+                  <div class="rend-kpi__val">220.000 €</div>
+                </div>
+                <div class="rend-kpi">
+                  <div class="rend-kpi__label">Eigenkapital</div>
+                  <div class="rend-kpi__val">44.000 €</div>
+                </div>
+                <div class="rend-kpi">
+                  <div class="rend-kpi__label">Kaltmiete / Mo.</div>
+                  <div class="rend-kpi__val rend-kpi__val--teal">820 €</div>
+                </div>
+                <div class="rend-kpi">
+                  <div class="rend-kpi__label">EK-Rendite p.a.</div>
+                  <div class="rend-kpi__val rend-kpi__val--gold">9,2 %</div>
+                </div>
+              </div>
+              <div class="rend-divider"></div>
+              <div class="rend-row">
+                <span class="rend-row__key">Brutto-Mietrendite</span>
+                <span class="rend-row__val">4,48 %</span>
+              </div>
+              <div class="rend-row">
+                <span class="rend-row__key">Monatliche Darlehensrate</span>
+                <span class="rend-row__val">726 €</span>
+              </div>
+              <div class="rend-row">
+                <span class="rend-row__key">Monatlicher Cashflow</span>
+                <span class="rend-row__val rend-row__val--pos">+ 94 €</span>
+              </div>
+              <div class="rend-row">
+                <span class="rend-row__key">Steuerersparnis (AfA 2 %)</span>
+                <span class="rend-row__val rend-row__val--pos">∼ 1.100 € / Jahr</span>
+              </div>
+              <div class="rend-progress-label">Fremdkapital-Hebel</div>
+              <div class="rend-track">
+                <div class="rend-fill" style="width:80%;background:linear-gradient(90deg,var(--c-dark),var(--c-teal));">
+                  <span>Darlehen 80 % · 176.000 €</span>
+                </div>
+              </div>
+              <div class="rend-track">
+                <div class="rend-fill" style="width:20%;background:linear-gradient(90deg,var(--c-gold),#e0b87a);">
+                  <span>EK 20 % · 44.000 €</span>
+                </div>
+              </div>
+              <p class="rend-source">Musterrechnung · 3,85 % Zins, 2,0 % Tilgung · AfA §7 EStG</p>
+            </div>
+          </div>
+        </div>
+        <div class="split-text">
+          <span class="split-eyebrow">Rendite &amp; Hebel</span>
+          <h2>Dein Kapital arbeitet für dich</h2>
+          <p>Eine Kapitalanlageimmobilie funktioniert als Hebelinvestment. Mit 20 % Eigenkapital kontrollierst du 100 % des Objektwerts. Wertsteigerungen und Mieteinnahmen wirken auf den Gesamtwert, sodass deine Eigenkapitalrendite oft deutlich über klassischen Anlageformen liegt.</p>
+          <p>Dazu kommt die steuerliche Komponente. Die jährliche Abschreibung (AfA) von 2 % des Gebäudewerts mindert dein zu versteuerndes Einkommen, ein Vorteil, der sich über Jahrzehnte summiert.</p>
+          <div class="gw-actions">
+            <a href="index.html#kontakt" class="btn btn--primary">Jetzt anfragen</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DARF ICH DICH EMPFEHLEN -->
+  <section class="gw-section gw-section--dark">
+    <div class="gw-inner">
+      <div class="gw-header">
+        <span class="gw-eyebrow">Netzwerk &amp; Partner</span>
+        <h2 class="gw-title">Darf ich dich empfehlen?</h2>
+        <p class="gw-subtitle">Ob du eine geprüfte Immobilie suchst, einen verlässlichen Mietpool oder einfach alles aus einer Hand, ich vernetze dich mit den richtigen Partnern.</p>
+      </div>
+      <div class="gw-grid gw-grid--3">
+
+        <div class="empf-card">
+          <div class="empf-card__num">01</div>
+          <h3>Alles aus einer Hand</h3>
+          <p>Ich arbeite mit geprüften Geschäftspartnern zusammen, von der Immobilienauswahl über den Mietpool bis zur Hausverwaltung. Du bekommst ein komplettes Paket aus einer Hand.</p>
+          <a href="index.html#kontakt" class="btn btn--outline">Kontakt aufnehmen</a>
+        </div>
+
+        <div class="empf-card">
+          <div class="empf-card__num">02</div>
+          <h3>Maklerangebote</h3>
+          <p>Zugang zu On-Market- und Off-Market-Objekten, von Tiny Houses bis zu Gewerbeimmobilien. Ich vermittle dir passende Angebote, die zu deiner Anlagestrategie passen.</p>
+          <a href="index.html#kontakt" class="btn btn--outline">Kontakt aufnehmen</a>
+        </div>
+
+        <div class="empf-card">
+          <div class="empf-card__num">03</div>
+          <h3>Mietpool</h3>
+          <p>Verteile das Mietausfallrisiko gleichmäßig auf alle Poolbeteiligten. Ein Mietpool schützt dich vor Leerstand und sorgt Monat für Monat für planbare, stabile Einnahmen.</p>
+          <a href="index.html#kontakt" class="btn btn--outline">Kontakt aufnehmen</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SANIERUNG SPLIT -->
+  <section class="gw-section gw-section--light">
+    <div class="gw-inner">
+      <div class="split-row split-row--reversed">
+        <div class="split-text">
+          <span class="split-eyebrow">Sanierung &amp; Modernisierung</span>
+          <h2>Sanieren lohnt sich</h2>
+          <p>Eine energetische Sanierung steigert den Wert deiner Kapitalanlage nachhaltig. Geringere Nebenkosten und eine bessere Energieklasse machen dein Objekt für Mieter attraktiver und rechtfertigen höhere Kaltmieten.</p>
+          <p>Dazu gibt es attraktive Fördermöglichkeiten. Die KfW und das BAFA unterstützen Sanierungsmaßnahmen mit zinsgünstigen Darlehen und Tilgungszuschüssen. Ich helfe dir, die passenden Programme zu identifizieren.</p>
+          <div class="gw-actions">
+            <a href="index.html#kontakt" class="btn btn--primary">Demnächst mehr dazu</a>
+          </div>
+        </div>
+        <div class="split-visual mockup">
+          <div class="mock-card mock--sanierung">
+            <div class="mock-header">
+              <div class="mock-header__dots"><span></span><span></span><span></span></div>
+              <span class="mock-header__title">Energieausweis · Vorher / Nachher</span>
+            </div>
+            <div class="mock-body">
+              <div class="san-rating-wrap">
+                <p class="san-rating-title">Energieeffizienzklasse nach Sanierung</p>
+
+                <div class="san-rating-row">
+                  <span class="san-rating-label" style="background:#e63c3c;">G</span>
+                  <div class="san-rating-bar" style="background:#e63c3c;width:92%;">
+                    <span>vor Sanierung · 185 kWh/(m²·a)</span>
+                  </div>
+                  <span class="san-badge san-badge--before">Vorher</span>
+                </div>
+
+                <div class="san-rating-row" style="margin-top:10px;">
+                  <span class="san-rating-label" style="background:#5ea832;">C</span>
+                  <div class="san-rating-bar" style="background:#5ea832;width:55%;">
+                    <span>nach Sanierung · 75 kWh/(m²·a)</span>
+                  </div>
+                  <span class="san-badge san-badge--after">Nachher</span>
+                </div>
+
+                <div class="san-rating-row" style="margin-top:4px;">
+                  <span class="san-rating-label" style="background:#2e8b57;">B</span>
+                  <div class="san-rating-bar" style="background:#2e8b57;width:40%;">
+                    <span>Ziel EH 55 · &lt; 55 kWh/(m²·a)</span>
+                  </div>
+                  <span class="san-badge" style="background:rgba(46,139,87,.12);color:#2e8b57;border:1px solid rgba(46,139,87,.3);">Ziel</span>
+                </div>
+              </div>
+
+              <div class="rend-divider"></div>
+              <p class="san-rating-title">KfW-Förderung Sanierung (BEG EM)</p>
+              <div class="san-kfw-row">
+                <span class="san-kfw-row__key">Max. Darlehensbetrag</span>
+                <span class="san-kfw-row__val">60.000 € / WE</span>
+              </div>
+              <div class="san-kfw-row">
+                <span class="san-kfw-row__key">Tilgungszuschuss (EH 55)</span>
+                <span class="san-kfw-row__val san-kfw-row__val--gold">bis 15 % = 9.000 €</span>
+              </div>
+              <div class="san-kfw-row">
+                <span class="san-kfw-row__key">Mieterhöhung nach Sanierung</span>
+                <span class="san-kfw-row__val" style="color:#2e7d5e;">+ 10–15 % möglich</span>
+              </div>
+              <p class="san-source">Quelle: kfw.de · dena Energieausweis · Stand 2025</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEINE VORTEILE -->
+  <section class="gw-section gw-section--dark">
+    <div class="gw-inner">
+      <div class="gw-header">
+        <span class="gw-eyebrow">Warum mit mir</span>
+        <h2 class="gw-title">Deine Vorteile</h2>
+        <p class="gw-subtitle">Ich begleite dich von der ersten Idee bis zum unterschriebenen Kaufvertrag und auch darüber hinaus.</p>
+      </div>
+      <div class="gw-grid gw-grid--4">
+
+        <div class="vorteil-card">
+          <div class="vorteil-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>
+            </svg>
+          </div>
+          <h3>Zeitersparnis</h3>
+          <p>Ich übernehme den Vergleich von Finanzierungsangeboten und behalte die Fristen im Blick, sodass du wertvolle Zeit sparst.</p>
+        </div>
+
+        <div class="vorteil-card">
+          <div class="vorteil-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+          </div>
+          <h3>Geprüfte Objekte</h3>
+          <p>Zugang zu geprüften On- und Off-Market-Immobilien. Ich arbeite ausschließlich mit seriösen Partnern zusammen.</p>
+        </div>
+
+        <div class="vorteil-card">
+          <div class="vorteil-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+            </svg>
+          </div>
+          <h3>Optimale Konditionen</h3>
+          <p>Durch mein Netzwerk an Bankpartnern vergleiche ich Zinssätze und finde die Finanzierung mit den besten Konditionen für dich.</p>
+        </div>
+
+        <div class="vorteil-card">
+          <div class="vorteil-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+              <circle cx="9" cy="7" r="4"/>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+          </div>
+          <h3>Persönliche Betreuung</h3>
+          <p>Kein Call-Center, kein Formularmarathon. Du hast einen direkten Ansprechpartner, der persönlich mit dir denkt und auf Augenhöhe mit dir kommuniziert.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="gw-section gw-section--gradient" style="padding: 90px 0;">
+    <div class="gw-inner">
+      <div class="cta-inner">
+        <span class="gw-eyebrow">Direkt starten</span>
+        <h2 class="gw-title">Hast du eine direkte Frage an mich?</h2>
+        <p>Ob Einstiegsberatung, konkretes Objekt oder Finanzierungsfrage, ich bin für dich da. Schreib mir einfach oder buche direkt ein kostenloses Erstgespräch.</p>
+        <div class="gw-actions" style="justify-content:center;">
+          <a href="index.html#kontakt" class="btn btn--gold">Jetzt Kontakt aufnehmen</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <div class="footer__logo">
+            <img src="Bilder/Logo.png" alt="Terence Müller Logo" class="nav__logo-img" />
+          </div>
+          <p class="footer__tagline">Dein Finanzberater</p>
+          <p class="footer__copy">Über 10 Jahre Erfahrung · Über 300 Kunden</p>
+        </div>
+        <div class="footer__links">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="finanzberatung.html">Finanzberatung</a></li>
+            <li><a href="gewerbeversicherung.html">Gewerbeversicherung</a></li>
+            <li><a href="service.html">Service</a></li>
+            <li><a href="index.html#kontakt">Kontakt</a></li>
+          </ul>
+        </div>
+        <div class="footer__links">
+          <h4>Finanzierung</h4>
+          <ul>
+            <li><a href="eigentum.html">Eigentum</a></li>
+            <li><a href="kapitalanlage.html">Kapitalanlageimmobilie</a></li>
+            <li><a href="anschlussfinanzierung.html">Anschlussfinanzierung</a></li>
+          </ul>
+        </div>
+        <div class="footer__links">
+          <h4>Rechtliches</h4>
+          <ul>
+            <li><a href="impressum.html">Impressum</a></li>
+            <li><a href="#">Datenschutz</a></li>
+            <li><a href="#">Erstinformation</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>© 2025 Terence Müller – Alle Rechte vorbehalten.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
